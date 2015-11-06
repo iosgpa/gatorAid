@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // Variable Declarations
+    @IBOutlet var Menu: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        initMenuButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // Initialize Menu button
+    func initMenuButton() {
+        // Menu.target = self.revealViewController()
+        Menu.action = Selector("revealToggle:")
+        // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
 
 }
 

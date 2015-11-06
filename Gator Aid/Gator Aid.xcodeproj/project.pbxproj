@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCD91BED103A000219AD /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE01BED1826000219AD /* BackTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
+		3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3F9133131BDE790A00C2E690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9133121BDE790A00C2E690 /* AppDelegate.swift */; };
 		3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9133141BDE790A00C2E690 /* ViewController.swift */; };
 		3F9133181BDE790A00C2E690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9133161BDE790A00C2E690 /* Main.storyboard */; };
@@ -34,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1BDCD91BED103A000219AD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3F1BDCDB1BED13C9000219AD /* GatorAid-Bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GatorAid-Bridging-header.h"; path = "SWRevealViewController/GatorAid-Bridging-header.h"; sourceTree = "<group>"; };
+		3F1BDCDC1BED13C9000219AD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		3F1BDCE01BED1826000219AD /* BackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableViewController.swift; sourceTree = "<group>"; };
+		3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOptionCustomCell.swift; sourceTree = "<group>"; };
+		3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPAGuesserViewController.swift; sourceTree = "<group>"; };
 		3F91330F1BDE790A00C2E690 /* Gator Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gator Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9133121BDE790A00C2E690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F9133141BDE790A00C2E690 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1BDCDF1BED141C000219AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F1BDCDB1BED13C9000219AD /* GatorAid-Bridging-header.h */,
+				3F1BDCDC1BED13C9000219AD /* SWRevealViewController.h */,
+				3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3F9133061BDE790A00C2E690 = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +137,14 @@
 				3F9133121BDE790A00C2E690 /* AppDelegate.swift */,
 				3F9133141BDE790A00C2E690 /* ViewController.swift */,
 				3F9133161BDE790A00C2E690 /* Main.storyboard */,
+				3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */,
+				3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */,
+				3F1BDCE01BED1826000219AD /* BackTableViewController.swift */,
 				3F9133191BDE790A00C2E690 /* Assets.xcassets */,
 				3F91331B1BDE790A00C2E690 /* LaunchScreen.storyboard */,
+				3F1BDCDF1BED141C000219AD /* Supporting Files */,
 				3F91331E1BDE790A00C2E690 /* Info.plist */,
+				3F1BDCD91BED103A000219AD /* MainViewController.swift */,
 			);
 			path = "Gator Aid";
 			sourceTree = "<group>";
@@ -219,8 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */,
+				3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */,
+				3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */,
+				3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */,
 				3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */,
 				3F9133131BDE790A00C2E690 /* AppDelegate.swift in Sources */,
+				3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +408,7 @@
 				3F9133231BDE790A00C2E690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
