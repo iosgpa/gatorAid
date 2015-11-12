@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCD91BED103A000219AD /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE01BED1826000219AD /* BackTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
-		3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCD91BED103A000219AD /* MainViewController.swift */; };
+		3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */; };
+		3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE01BED1826000219AD /* BackTableViewController.swift */; };
+		3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */; };
+		3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */; };
 		3F9133131BDE790A00C2E690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9133121BDE790A00C2E690 /* AppDelegate.swift */; };
 		3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9133141BDE790A00C2E690 /* ViewController.swift */; };
 		3F9133181BDE790A00C2E690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9133161BDE790A00C2E690 /* Main.storyboard */; };
@@ -29,13 +29,16 @@
 		3F9133371BDE7A3B00C2E690 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133361BDE7A3B00C2E690 /* libsqlite3.tbd */; };
 		3F9133391BDE7A4A00C2E690 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133381BDE7A4A00C2E690 /* Accounts.framework */; };
 		3F91333B1BDE7A5400C2E690 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333A1BDE7A5400C2E690 /* Social.framework */; };
-		3F9133441BDE7B3300C2E690 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333D1BDE7B3300C2E690 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		3F9133451BDE7B3300C2E690 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333E1BDE7B3300C2E690 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		3F9133461BDE7B3300C2E690 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333F1BDE7B3300C2E690 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		3F9133471BDE7B3300C2E690 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133401BDE7B3300C2E690 /* ParseFacebookUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		3F9133481BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		3F9133491BDE7B3300C2E690 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		3F91334A1BDE7B3300C2E690 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133431BDE7B3300C2E690 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		3F9133441BDE7B3300C2E690 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333D1BDE7B3300C2E690 /* Bolts.framework */; };
+		3F9133451BDE7B3300C2E690 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333E1BDE7B3300C2E690 /* Parse.framework */; };
+		3F9133461BDE7B3300C2E690 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F91333F1BDE7B3300C2E690 /* ParseCrashReporting.framework */; };
+		3F9133471BDE7B3300C2E690 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133401BDE7B3300C2E690 /* ParseFacebookUtils.framework */; };
+		3F9133481BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */; };
+		3F9133491BDE7B3300C2E690 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */; };
+		3F91334A1BDE7B3300C2E690 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133431BDE7B3300C2E690 /* ParseUI.framework */; };
+		83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */; };
+		83FF9E3A1BF4651B00B4C5AD /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E391BF4651B00B4C5AD /* signInViewController.swift */; };
+		83FF9E3C1BF4655300B4C5AD /* myAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		3F9133431BDE7B3300C2E690 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		83FF9E391BF4651B00B4C5AD /* signInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
+		83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myAdvisorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 				3F9133141BDE790A00C2E690 /* ViewController.swift */,
 				3F9133161BDE790A00C2E690 /* Main.storyboard */,
 				3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */,
+				83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */,
+				83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */,
+				83FF9E391BF4651B00B4C5AD /* signInViewController.swift */,
 				3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */,
 				3F1BDCE01BED1826000219AD /* BackTableViewController.swift */,
 				3F9133191BDE790A00C2E690 /* Assets.xcassets */,
@@ -248,11 +257,14 @@
 			files = (
 				3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */,
 				3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */,
+				83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */,
 				3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */,
 				3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */,
 				3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */,
 				3F9133131BDE790A00C2E690 /* AppDelegate.swift in Sources */,
+				83FF9E3A1BF4651B00B4C5AD /* signInViewController.swift in Sources */,
 				3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */,
+				83FF9E3C1BF4655300B4C5AD /* myAdvisorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
