@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Parse
 
 class signInViewController: UIViewController {
 
+    
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if (PFUser.currentUser() != nil) {
+            self.goHome()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +28,31 @@ class signInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func Login(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground (username.text!, password:password.text!) {
+            (user: PFUser?, Error: NSError?) -> Void in
+            if user != nil {
+                // Check the credentials of the user
+                if (self.username.text != "" && self.password.text != "") {
+                    PFUser.logInWithUsernameInBackground(self.username.text!, password:self.password.text!) {
+                        (user: PFUser?, error: NSError?) -> Void in
+                        if user != nil {
+                            print("You logged in")
+                            self.goHome()
+                        }
+                        else {
+                            print(error?.description)
+                        }
+                    }
+                }
+            }
+        }
     }
-    */
-
+    
+    
+    func goHome() {
+        print("Going Home from Sign In")
+        performSegueWithIdentifier("goHome", sender: nil)
+    }
 }
