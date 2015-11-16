@@ -36,6 +36,19 @@
 		3F9133481BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */; };
 		3F9133491BDE7B3300C2E690 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */; };
 		3F91334A1BDE7B3300C2E690 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133431BDE7B3300C2E690 /* ParseUI.framework */; };
+		3FDC176A1BF7A10600791DF3 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176B1BF7A6DE00791DF3 /* Main Page.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC17701BF7AE0800791DF3 /* User Male Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC17721BF7AE0F00791DF3 /* Login background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17711BF7AE0F00791DF3 /* Login background.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC17771BF7AEEC00791DF3 /* SignIn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC17781BF7AEEC00791DF3 /* SignIn_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC17791BF7AEEC00791DF3 /* SignUp_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC177B1BF7AF6E00791DF3 /* GatorAidLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC177E1BF7B6B400791DF3 /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177C1BF7B6B400791DF3 /* Password.png */; settings = {ASSET_TAGS = (); }; };
+		3FDC177F1BF7B6B400791DF3 /* Username.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177D1BF7B6B400791DF3 /* Username.png */; settings = {ASSET_TAGS = (); }; };
+		3FE1B83F1BF50496001FA2DB /* Menu 2-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */; settings = {ASSET_TAGS = (); }; };
+		3FE1B8401BF50496001FA2DB /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE1B83E1BF50496001FA2DB /* Menu-25.png */; settings = {ASSET_TAGS = (); }; };
 		83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */; };
 		83FF9E3A1BF4651B00B4C5AD /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E391BF4651B00B4C5AD /* signInViewController.swift */; };
 		83FF9E3C1BF4655300B4C5AD /* myAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */; };
@@ -75,6 +88,19 @@
 		3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		3F9133431BDE7B3300C2E690 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
+		3FDC176B1BF7A6DE00791DF3 /* Main Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main Page.png"; sourceTree = "<group>"; };
+		3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock Filled-25.png"; sourceTree = "<group>"; };
+		3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Male Filled-25.png"; sourceTree = "<group>"; };
+		3FDC17711BF7AE0F00791DF3 /* Login background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login background.png"; sourceTree = "<group>"; };
+		3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignIn_bg.png; sourceTree = "<group>"; };
+		3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignIn_button.png; sourceTree = "<group>"; };
+		3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp_button.png; sourceTree = "<group>"; };
+		3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GatorAidLogo.png; sourceTree = "<group>"; };
+		3FDC177C1BF7B6B400791DF3 /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
+		3FDC177D1BF7B6B400791DF3 /* Username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Username.png; sourceTree = "<group>"; };
+		3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu 2-26.png"; sourceTree = "<group>"; };
+		3FE1B83E1BF50496001FA2DB /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
 		83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		83FF9E391BF4651B00B4C5AD /* signInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myAdvisorViewController.swift; sourceTree = "<group>"; };
@@ -143,9 +169,11 @@
 				3F9133121BDE790A00C2E690 /* AppDelegate.swift */,
 				3F9133141BDE790A00C2E690 /* ViewController.swift */,
 				3F9133161BDE790A00C2E690 /* Main.storyboard */,
+				3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */,
 				3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */,
 				83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */,
 				83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */,
+				3FDC17731BF7AE2B00791DF3 /* icons */,
 				83FF9E391BF4651B00B4C5AD /* signInViewController.swift */,
 				3F1BDCE21BED1DA3000219AD /* MenuOptionCustomCell.swift */,
 				3F1BDCE01BED1826000219AD /* BackTableViewController.swift */,
@@ -182,6 +210,25 @@
 				3F9133241BDE79DD00C2E690 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FDC17731BF7AE2B00791DF3 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */,
+				3FDC177C1BF7B6B400791DF3 /* Password.png */,
+				3FDC177D1BF7B6B400791DF3 /* Username.png */,
+				3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */,
+				3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */,
+				3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */,
+				3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */,
+				3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */,
+				3FDC17711BF7AE0F00791DF3 /* Login background.png */,
+				3FDC176B1BF7A6DE00791DF3 /* Main Page.png */,
+				3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */,
+				3FE1B83E1BF50496001FA2DB /* Menu-25.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +289,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDC17781BF7AEEC00791DF3 /* SignIn_button.png in Resources */,
+				3FDC17721BF7AE0F00791DF3 /* Login background.png in Resources */,
+				3FE1B83F1BF50496001FA2DB /* Menu 2-26.png in Resources */,
 				3F91331D1BDE790A00C2E690 /* LaunchScreen.storyboard in Resources */,
+				3FE1B8401BF50496001FA2DB /* Menu-25.png in Resources */,
+				3FDC17791BF7AEEC00791DF3 /* SignUp_button.png in Resources */,
+				3FDC177E1BF7B6B400791DF3 /* Password.png in Resources */,
+				3FDC17771BF7AEEC00791DF3 /* SignIn_bg.png in Resources */,
+				3FDC177B1BF7AF6E00791DF3 /* GatorAidLogo.png in Resources */,
 				3F91331A1BDE790A00C2E690 /* Assets.xcassets in Resources */,
+				3FDC17701BF7AE0800791DF3 /* User Male Filled-25.png in Resources */,
+				3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */,
 				3F9133181BDE790A00C2E690 /* Main.storyboard in Resources */,
+				3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */,
+				3FDC177F1BF7B6B400791DF3 /* Username.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +318,7 @@
 				3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */,
 				83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */,
 				3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */,
+				3FDC176A1BF7A10600791DF3 /* StartUpViewController.swift in Sources */,
 				3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */,
 				3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */,
 				3F9133131BDE790A00C2E690 /* AppDelegate.swift in Sources */,

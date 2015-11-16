@@ -23,6 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "zqtGETwTErioYfbDWvr8U95cE1he8eQZvJCsK99b")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        
+        // SET INITIAL CONTROLLER BASED ON USER EXISTENCE
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedIn = storyboard.instantiateViewControllerWithIdentifier("MainHome")
+        let notLoggedIn = storyboard.instantiateViewControllerWithIdentifier("StartUpPage")
+        if (PFUser.currentUser() != nil) {
+            self.window?.rootViewController = loggedIn
+        }
+        else {
+            self.window?.rootViewController = notLoggedIn
+        }
+        self.window?.makeKeyAndVisible()
+        
+        
         return true
     }
 

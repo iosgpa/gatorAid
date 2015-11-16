@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
     
     // Variable Declarations
     @IBOutlet var Menu: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
@@ -29,6 +31,12 @@ class ViewController: UIViewController {
         // Menu.target = self.revealViewController()
         Menu.action = Selector("revealToggle:")
         // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    @IBAction func Logout(sender: AnyObject) {
+        PFUser.logOut()
+        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("SignIn")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
     }
 
 }
