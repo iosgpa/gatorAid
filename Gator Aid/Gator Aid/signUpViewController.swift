@@ -22,17 +22,4 @@ class signUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // ================================================================================
-    // Remove before deployment
-    func testLogin() {
-        PFUser.logInWithUsernameInBackground ("test", password:"0000") {
-            (user: PFUser?, Error: NSError?) -> Void in
-            if user != nil {
-                print("Successfully Logged in")
-            }
-            else {
-                print("Login Failed")
-            }
-        }
-    }
 }

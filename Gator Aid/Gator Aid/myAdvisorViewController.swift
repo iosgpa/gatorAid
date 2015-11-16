@@ -24,29 +24,19 @@ class myAdvisorViewController: UIViewController {
     @IBOutlet var Menu:UIBarButtonItem!
     
     // Locally declared variables
-    var currentUserProfile = [PFObject]()
     var advisor = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
-        if currentUserProfile.count == 0 {
-            getCurrentUserProfile()
+        if PFUser.currentUser() != nil {
+            self.getAdvisor()
         }
-        if advisor.count == 0 {
-            getAdvisor()
-        }
-        else { printInfo() }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar
-        navigationItem.title = "My advisor"
     }
     
     // Initialize Menu button
@@ -56,38 +46,32 @@ class myAdvisorViewController: UIViewController {
         // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
-    // This function gets the profile of the current selected user
-    func getCurrentUserProfile() {
-        let query:PFQuery = PFQuery(className: "Profile")
-        query.whereKey("user", equalTo: PFUser.currentUser()!)
-        query.limit = 1
-        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                for obj in objects! {
-                    self.currentUserProfile.append(obj)
-                    self.getAdvisor()
-                }
-            }
-        }
-    }
-    
+    // Get the current advisor
     func getAdvisor() {
+        let tmp = PFUser.currentUser() as! PFObject
         let query:PFQuery = PFQuery(className: "Advisors")
-        query.whereKey("phone", equalTo: "3523921090")
+        query.whereKey("objectId", equalTo: tmp["advisor"].objectId!!)
         query.limit = 1
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
                     self.advisor.append(obj)
-                    self.viewDidLoad()
+                    self.printInfo()
                 }
             }
         }
     }
     
-    
-    
+    // Print the function
     func printInfo() {
-        advName.text = String("Kinderley")
+        advName.text = String(advisor[0]["name"])
+        college.text = String(advisor[0]["college"])
+        phone.text = String(advisor[0]["phone"])
+        emailAddr.text = String(advisor[0]["email"])
+        webAddr.text = String(advisor[0]["website"])
+        bldLoc.text = String(advisor[0]["location"])
+        roomNum.text = String(advisor[0]["room"])
+        officeHr.text = String(advisor[0]["officeHr"])
+        advisingMes.text = String(advisor[0]["message"])
     }
 }
