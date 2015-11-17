@@ -38,7 +38,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oga-E4-uf2" kind="show" id="MOp-47-GOs"/>
+                                    <segue destination="oga-E4-uf2" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="MOp-47-GOs"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GatorAidLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="l61-QM-q6A">
@@ -892,6 +892,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-7R-bmT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-I8-I8M">
                                 <rect key="frame" x="102" y="214" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -970,6 +973,7 @@
                             <constraint firstItem="aE0-mq-YoP" firstAttribute="top" secondItem="YEf-Gc-ZKT" secondAttribute="bottom" constant="33" id="5e4-7K-DTx"/>
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="width" secondItem="ny3-Pe-k3B" secondAttribute="width" id="7C6-cY-Zi9"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerY" secondItem="ZRR-x8-QeX" secondAttribute="centerY" id="8yh-bd-Kec"/>
+                            <constraint firstItem="jqP-7R-bmT" firstAttribute="top" secondItem="xc2-sM-KGP" secondAttribute="topMargin" id="9Bs-q0-hgP"/>
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="9av-hf-uE0"/>
                             <constraint firstItem="fkR-I8-I8M" firstAttribute="trailing" secondItem="xc2-sM-KGP" secondAttribute="trailingMargin" id="9dq-fK-w0u"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="width" secondItem="aE0-mq-YoP" secondAttribute="width" id="9yX-JU-c3o"/>
@@ -979,11 +983,13 @@
                             <constraint firstItem="TkS-9o-dSJ" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="MOd-UX-fT6"/>
                             <constraint firstItem="zmB-7D-u6c" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" constant="4" id="O9p-YG-Ush"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="top" secondItem="fkR-I8-I8M" secondAttribute="bottom" constant="16" id="URZ-ve-2tT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jqP-7R-bmT" secondAttribute="trailing" constant="-20" id="Whz-Ee-FIN"/>
                             <constraint firstItem="8cm-pT-7Uq" firstAttribute="centerX" secondItem="xc2-sM-KGP" secondAttribute="centerX" id="Ytz-L0-XAk"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerX" secondItem="fkR-I8-I8M" secondAttribute="centerX" id="Z5X-6F-4QQ"/>
                             <constraint firstItem="fkR-I8-I8M" firstAttribute="centerY" secondItem="ny3-Pe-k3B" secondAttribute="centerY" id="ceK-j4-kfF"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="top" secondItem="aE0-mq-YoP" secondAttribute="bottom" constant="8" id="dZe-WZ-WRB"/>
                             <constraint firstItem="YEf-Gc-ZKT" firstAttribute="top" secondItem="sX6-bu-1Pq" secondAttribute="bottom" constant="8" id="eCK-oM-xUl"/>
+                            <constraint firstItem="UhT-8z-qTs" firstAttribute="top" secondItem="jqP-7R-bmT" secondAttribute="bottom" id="fYt-No-L3D"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerY" secondItem="ZRR-x8-QeX" secondAttribute="centerY" id="kmq-p7-cQO"/>
                             <constraint firstItem="ny3-Pe-k3B" firstAttribute="top" secondItem="mfl-2f-XXB" secondAttribute="bottom" constant="25" id="lrM-yG-bfc"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="centerX" secondItem="aE0-mq-YoP" secondAttribute="centerX" id="lyq-eL-Wl5"/>
@@ -992,6 +998,7 @@
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="olQ-rg-jUb"/>
                             <constraint firstItem="nOm-yx-NHj" firstAttribute="centerX" secondItem="xc2-sM-KGP" secondAttribute="centerX" id="p3C-uP-Jh1"/>
                             <constraint firstItem="ny3-Pe-k3B" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" id="tmC-BQ-s8F"/>
+                            <constraint firstItem="jqP-7R-bmT" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" constant="-20" id="vkm-LS-D2b"/>
                             <constraint firstItem="nOm-yx-NHj" firstAttribute="top" secondItem="8L0-uc-zpS" secondAttribute="bottom" constant="80" id="xOb-OI-HIM"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="width" secondItem="fkR-I8-I8M" secondAttribute="width" id="xwz-W8-Lxy"/>
                             <constraint firstItem="YEf-Gc-ZKT" firstAttribute="width" secondItem="sX6-bu-1Pq" secondAttribute="width" id="yWH-lc-Co0"/>
@@ -1037,7 +1044,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mIj-Y0-PzL"/>
-        <segue reference="G4o-k4-gyQ"/>
+        <segue reference="MOp-47-GOs"/>
         <segue reference="kPN-hG-ehV"/>
         <segue reference="emT-Ip-WEb"/>
         <segue reference="4qh-fz-icv"/>
