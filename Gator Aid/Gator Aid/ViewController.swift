@@ -35,8 +35,8 @@ class ViewController: UIViewController {
     
     @IBAction func Logout(sender: AnyObject) {
         PFUser.logOut()
-        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("SignIn")
-        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
+        let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
     }
 
 }
