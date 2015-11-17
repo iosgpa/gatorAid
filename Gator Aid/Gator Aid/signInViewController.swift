@@ -53,6 +53,6 @@ class signInViewController: UIViewController {
     
     func goHome() {
         print("Going Home from Sign In")
-        performSegueWithIdentifier("goHome", sender: nil)
+        performSegueWithIdentifier("signIn2Home", sender: nil)
     }
 }
