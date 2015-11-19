@@ -29,14 +29,17 @@ class myAdvisorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
-        if PFUser.currentUser() != nil {
-            self.getAdvisor()
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if (PFUser.currentUser() != nil) {
+            self.getAdvisor()
+        }
     }
     
     // Initialize Menu button
