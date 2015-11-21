@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -293,7 +293,19 @@
                         <outlet property="Menu" destination="5lx-Xs-ZL7" id="17a-3z-UYT"/>
                         <outlet property="background" destination="Dpv-F5-2z4" id="caU-ff-ZLo"/>
                         <outlet property="cancel" destination="uiI-tz-8Vt" id="zh9-gb-cJJ"/>
+                        <outlet property="credit1" destination="jk4-U6-Leq" id="pCy-cm-5hx"/>
+                        <outlet property="credit2" destination="EwU-Kt-yJ5" id="aLh-Dm-9sC"/>
+                        <outlet property="credit3" destination="AyO-3j-jzh" id="7l8-ZK-y2I"/>
+                        <outlet property="credit4" destination="7gw-wD-7RT" id="Yeg-KH-rkV"/>
+                        <outlet property="credit5" destination="snk-8J-I4t" id="Um9-lH-fra"/>
+                        <outlet property="credit6" destination="G8v-zz-iMW" id="57n-Ns-EaK"/>
                         <outlet property="gpaMsg" destination="TOq-vb-Zsf" id="fJ2-ap-7UG"/>
+                        <outlet property="grade1" destination="OqL-gq-fT8" id="T2l-fC-KHL"/>
+                        <outlet property="grade2" destination="Hj9-ds-uqc" id="dku-kz-7nT"/>
+                        <outlet property="grade3" destination="Tye-Ua-bfo" id="hSB-os-b7z"/>
+                        <outlet property="grade4" destination="eyC-HI-6HY" id="DRF-j2-75u"/>
+                        <outlet property="grade5" destination="mAG-wf-yrt" id="6uM-3H-veI"/>
+                        <outlet property="grade6" destination="7gj-w1-bvE" id="ywV-54-GfW"/>
                         <outlet property="nav" destination="mbb-xk-toz" id="Ieo-ig-6jm"/>
                     </connections>
                 </viewController>
@@ -1043,10 +1055,10 @@
         <image name="line.png" width="319" height="9"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mIj-Y0-PzL"/>
-        <segue reference="MOp-47-GOs"/>
-        <segue reference="kPN-hG-ehV"/>
         <segue reference="emT-Ip-WEb"/>
+        <segue reference="oKU-tG-w0u"/>
+        <segue reference="MOp-47-GOs"/>
+        <segue reference="mIj-Y0-PzL"/>
         <segue reference="4qh-fz-icv"/>
     </inferredMetricsTieBreakers>
 </document>
