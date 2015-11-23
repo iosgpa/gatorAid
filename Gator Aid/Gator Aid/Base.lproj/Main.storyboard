@@ -1043,6 +1043,42 @@
             </objects>
             <point key="canvasLocation" x="358" y="218"/>
         </scene>
+        <!--Track View Controller-->
+        <scene sceneID="mbZ-pQ-ifz">
+            <objects>
+                <viewController id="BTS-dO-nXn" customClass="GPATrackViewController" customModule="Gator_Aid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h68-wi-f4L"/>
+                        <viewControllerLayoutGuide type="bottom" id="SgA-iS-C2N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PcW-Dk-Tu1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6K-HE-rHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="218"/>
+        </scene>
+        <!--Course Track View Controller-->
+        <scene sceneID="CCt-A6-Kn0">
+            <objects>
+                <viewController id="ulo-05-zsx" customClass="courseTrackViewController" customModule="Gator_Aid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ir-L4-Gvb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ccc-xo-c4S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24T-dI-9Ut">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2h-qT-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="890"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cancel-25.png" width="25" height="25"/>
