@@ -21,6 +21,7 @@ class myAdvisorViewController: UIViewController {
     @IBOutlet weak var roomNum: UILabel!
     @IBOutlet weak var officeHr: UILabel!
     @IBOutlet weak var advisingMes: UILabel!
+    @IBOutlet weak var noteFromAdv: UILabel!
     @IBOutlet var Menu:UIBarButtonItem!
     
     // Locally declared variables
@@ -75,6 +76,7 @@ class myAdvisorViewController: UIViewController {
         bldLoc.text = String(advisor[0]["location"])
         roomNum.text = String(advisor[0]["room"])
         officeHr.text = String(advisor[0]["officeHr"])
+        noteFromAdv.text = "Note from " + String(advisor[0]["name"])
         advisingMes.text = String(advisor[0]["message"])
     }
 }
