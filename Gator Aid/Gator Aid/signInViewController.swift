@@ -11,7 +11,7 @@ import Parse
 
 class signInViewController: UIViewController {
 
-    
+    // UI variables declarations
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -19,6 +19,7 @@ class signInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (PFUser.currentUser() != nil) {
+            // Skip login section if user is already logged in
             self.goHome()
         }
     }
@@ -28,7 +29,7 @@ class signInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // Check user login credentials and proceed to log in the user
     @IBAction func Login(sender: AnyObject) {
         PFUser.logInWithUsernameInBackground (username.text!, password:password.text!) {
             (user: PFUser?, Error: NSError?) -> Void in
@@ -50,9 +51,8 @@ class signInViewController: UIViewController {
         }
     }
     
-    
+    // Proceed to Home page if the user is already logged in or user meet login credentials
     func goHome() {
-        print("Going Home from Sign In")
-        performSegueWithIdentifier("goHome", sender: nil)
+        performSegueWithIdentifier("signIn2Home", sender: nil)
     }
 }

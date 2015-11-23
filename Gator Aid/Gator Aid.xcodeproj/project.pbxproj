@@ -36,6 +36,12 @@
 		3F9133481BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */; };
 		3F9133491BDE7B3300C2E690 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */; };
 		3F91334A1BDE7B3300C2E690 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9133431BDE7B3300C2E690 /* ParseUI.framework */; };
+		3FABEB651BFAA96D00A47219 /* Cancel-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FABEB641BFAA96D00A47219 /* Cancel-25.png */; settings = {ASSET_TAGS = (); }; };
+		3FCCD0571BFBB6D000E8A4BE /* Sample button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD0561BFBB6D000E8A4BE /* Sample button.png */; settings = {ASSET_TAGS = (); }; };
+		3FCCD0591BFBB91600E8A4BE /* Login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD0581BFBB91600E8A4BE /* Login_button.png */; settings = {ASSET_TAGS = (); }; };
+		3FCCD05B1BFBB97400E8A4BE /* century_tower_blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD05A1BFBB97400E8A4BE /* century_tower_blurred.png */; settings = {ASSET_TAGS = (); }; };
+		3FCCD05D1BFBBE3D00E8A4BE /* Generic_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */; settings = {ASSET_TAGS = (); }; };
+		3FCCD05F1BFBC34D00E8A4BE /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD05E1BFBC34D00E8A4BE /* line.png */; settings = {ASSET_TAGS = (); }; };
 		3FDC176A1BF7A10600791DF3 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176B1BF7A6DE00791DF3 /* Main Page.png */; settings = {ASSET_TAGS = (); }; };
 		3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */; settings = {ASSET_TAGS = (); }; };
@@ -88,6 +94,12 @@
 		3F9133411BDE7B3300C2E690 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		3F9133421BDE7B3300C2E690 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		3F9133431BDE7B3300C2E690 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		3FABEB641BFAA96D00A47219 /* Cancel-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cancel-25.png"; sourceTree = "<group>"; };
+		3FCCD0561BFBB6D000E8A4BE /* Sample button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sample button.png"; sourceTree = "<group>"; };
+		3FCCD0581BFBB91600E8A4BE /* Login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_button.png; sourceTree = "<group>"; };
+		3FCCD05A1BFBB97400E8A4BE /* century_tower_blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = century_tower_blurred.png; sourceTree = "<group>"; };
+		3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_button.png; sourceTree = "<group>"; };
+		3FCCD05E1BFBC34D00E8A4BE /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
 		3FDC176B1BF7A6DE00791DF3 /* Main Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main Page.png"; sourceTree = "<group>"; };
 		3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock Filled-25.png"; sourceTree = "<group>"; };
@@ -215,11 +227,17 @@
 		3FDC17731BF7AE2B00791DF3 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				3FCCD05E1BFBC34D00E8A4BE /* line.png */,
+				3FCCD0561BFBB6D000E8A4BE /* Sample button.png */,
 				3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */,
+				3FCCD0581BFBB91600E8A4BE /* Login_button.png */,
+				3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */,
+				3FCCD05A1BFBB97400E8A4BE /* century_tower_blurred.png */,
 				3FDC177C1BF7B6B400791DF3 /* Password.png */,
 				3FDC177D1BF7B6B400791DF3 /* Username.png */,
 				3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */,
 				3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */,
+				3FABEB641BFAA96D00A47219 /* Cancel-25.png */,
 				3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */,
 				3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */,
 				3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */,
@@ -292,18 +310,24 @@
 				3FDC17781BF7AEEC00791DF3 /* SignIn_button.png in Resources */,
 				3FDC17721BF7AE0F00791DF3 /* Login background.png in Resources */,
 				3FE1B83F1BF50496001FA2DB /* Menu 2-26.png in Resources */,
+				3FCCD0591BFBB91600E8A4BE /* Login_button.png in Resources */,
 				3F91331D1BDE790A00C2E690 /* LaunchScreen.storyboard in Resources */,
 				3FE1B8401BF50496001FA2DB /* Menu-25.png in Resources */,
 				3FDC17791BF7AEEC00791DF3 /* SignUp_button.png in Resources */,
 				3FDC177E1BF7B6B400791DF3 /* Password.png in Resources */,
+				3FCCD05F1BFBC34D00E8A4BE /* line.png in Resources */,
+				3FCCD0571BFBB6D000E8A4BE /* Sample button.png in Resources */,
 				3FDC17771BF7AEEC00791DF3 /* SignIn_bg.png in Resources */,
 				3FDC177B1BF7AF6E00791DF3 /* GatorAidLogo.png in Resources */,
 				3F91331A1BDE790A00C2E690 /* Assets.xcassets in Resources */,
+				3FABEB651BFAA96D00A47219 /* Cancel-25.png in Resources */,
 				3FDC17701BF7AE0800791DF3 /* User Male Filled-25.png in Resources */,
 				3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */,
 				3F9133181BDE790A00C2E690 /* Main.storyboard in Resources */,
 				3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */,
+				3FCCD05D1BFBBE3D00E8A4BE /* Generic_button.png in Resources */,
 				3FDC177F1BF7B6B400791DF3 /* Username.png in Resources */,
+				3FCCD05B1BFBB97400E8A4BE /* century_tower_blurred.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
