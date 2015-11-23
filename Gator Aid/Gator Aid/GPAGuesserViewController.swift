@@ -225,6 +225,7 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     @IBAction func calculateGPA(sender: AnyObject) {
+        var value: [Double] = [4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67, 0]
         if ((grade1.text == "" && credit1.text != "") || (credit1.text == "" && grade1.text != "")) {
             gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
         }
@@ -245,7 +246,114 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         else {
             gpaMsg.text = "0.0"
-            //Algorithm code will go here
+            var gr1 = 0.00
+            var gr2 = 0.00
+            var gr3 = 0.00
+            var gr4 = 0.00
+            var gr5 = 0.00
+            var gr6 = 0.00
+            
+            var cr1 = 0.00
+            var cr2 = 0.00
+            var cr3 = 0.00
+            var cr4 = 0.00
+            var cr5 = 0.00
+            var cr6 = 0.00
+            var sum = 0.00
+            
+            var tot1 = 0.00
+            var tot2 = 0.00
+            var tot3 = 0.00
+            var tot4 = 0.00
+            var tot5 = 0.00
+            var tot6 = 0.00
+            
+            var gpa = 0.00
+
+
+            if(grade1.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade1.text == pickGrade[a])
+                    {
+                        gr1 = value[a]
+                    }
+                }
+                 cr1 = Double(credit1.text!)!
+                tot1 = gr1 * cr1
+            }
+            
+            if(grade2.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade2.text == pickGrade[a])
+                    {
+                        gr2 = value[a]
+                    }
+                }
+                 cr2 = Double(credit2.text!)!
+                tot2 = gr2 * cr2
+            }
+            
+            if(grade3.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade3.text == pickGrade[a])
+                    {
+                        gr3 = value[a]
+                    }
+                }
+                 cr3 = Double(credit3.text!)!
+                tot3 = gr3 * cr3
+            }
+            
+            if(grade4.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade4.text == pickGrade[a])
+                    {
+                        gr4 = value[a]
+                    }
+                }
+                 cr4 = Double(credit4.text!)!
+                tot4 = gr4 * cr4
+            }
+            
+            if(grade5.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade5.text == pickGrade[a])
+                    {
+                        gr5 = value[a]
+                    }
+                }
+                cr5 = Double(credit5.text!)!
+                tot5 = gr5 * cr5
+            }
+            
+            if(grade6.text != "")
+            {
+                for var a = 0; a < 12; a++
+                {
+                    if(grade6.text == pickGrade[a])
+                    {
+                        gr6 = value[a]
+                    }
+                }
+                 cr6 = Double(credit6.text!)!
+                tot6 = gr6 * cr6
+            }
+            
+            sum = cr1 + cr2 + cr3 + cr4 + cr5 + cr6
+            gpa = (tot1 + tot2 + tot3 + tot4 + tot5 + tot6) / sum
+            
+            gpaMsg.text = String(format: "%.3f", gpa)
+            
         }
     }
     
