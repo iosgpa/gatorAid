@@ -38,8 +38,9 @@ class myAdvisorViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (PFUser.currentUser() != nil && advisor.count == 0) {
+        if (PFUser.currentUser() != nil && currUserAdvisor.count == 0) {
             self.getAdvisor()
+            self.printInfo()
         }
         else if (PFUser.currentUser() != nil) {
             self.printInfo()
@@ -69,8 +70,7 @@ class myAdvisorViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    self.advisor.append(obj)
-                    self.printInfo()
+                    currUserAdvisor.append(obj)
                 }
             }
         }
@@ -78,15 +78,17 @@ class myAdvisorViewController: UIViewController {
     
     // Print the function
     func printInfo() {
-        advName.text = String(advisor[0]["name"])
-        college.text = String(advisor[0]["college"])
-        phone.text = String(advisor[0]["phone"])
-        emailAddr.text = String(advisor[0]["email"])
-        webAddr.text = String(advisor[0]["website"])
-        bldLoc.text = String(advisor[0]["location"])
-        roomNum.text = String(advisor[0]["room"])
-        officeHr.text = String(advisor[0]["officeHr"])
-        noteFromAdv.text = "Note from " + String(advisor[0]["name"])
-        advisingMes.text = String(advisor[0]["message"])
+        if(currUserAdvisor.count != 0) {
+            advName.text = String(currUserAdvisor[0]["name"])
+            college.text = String(currUserAdvisor[0]["college"])
+            phone.text = String(currUserAdvisor[0]["phone"])
+            emailAddr.text = String(currUserAdvisor[0]["email"])
+            webAddr.text = String(currUserAdvisor[0]["website"])
+            bldLoc.text = String(currUserAdvisor[0]["location"])
+            roomNum.text = String(currUserAdvisor[0]["room"])
+            officeHr.text = String(currUserAdvisor[0]["officeHr"])
+            noteFromAdv.text = "Note from " + String(currUserAdvisor[0]["name"])
+            advisingMes.text = String(currUserAdvisor[0]["message"])
+        }
     }
 }

@@ -40,12 +40,29 @@ class signInViewController: UIViewController {
                         (user: PFUser?, error: NSError?) -> Void in
                         if user != nil {
                             print("You logged in")
+                            self.getCurrentUserProfile()
+                            self.getCurrentUserAdvisor()
                             self.goHome()
                         }
                         else {
                             print(error?.description)
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    // Get the advisor of the current logged in user
+    func getCurrentUserAdvisor() {
+        let tmp = PFUser.currentUser() as! PFObject
+        let query:PFQuery = PFQuery(className: "Advisors")
+        query.whereKey("objectId", equalTo: tmp["advisor"].objectId!!)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    currUserAdvisor.append(obj)
                 }
             }
         }
@@ -59,7 +76,7 @@ class signInViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    print(obj)
+                    currUserProfile.append(obj)
                 }
             }
         }
