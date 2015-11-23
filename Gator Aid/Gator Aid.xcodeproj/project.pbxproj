@@ -43,17 +43,11 @@
 		3FCCD05D1BFBBE3D00E8A4BE /* Generic_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */; };
 		3FCCD05F1BFBC34D00E8A4BE /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCD05E1BFBC34D00E8A4BE /* line.png */; };
 		3FDC176A1BF7A10600791DF3 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */; };
-		3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176B1BF7A6DE00791DF3 /* Main Page.png */; };
-		3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */; };
-		3FDC17701BF7AE0800791DF3 /* User Male Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */; };
 		3FDC17721BF7AE0F00791DF3 /* Login background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17711BF7AE0F00791DF3 /* Login background.png */; };
 		3FDC17771BF7AEEC00791DF3 /* SignIn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */; };
-		3FDC17781BF7AEEC00791DF3 /* SignIn_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */; };
-		3FDC17791BF7AEEC00791DF3 /* SignUp_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */; };
 		3FDC177B1BF7AF6E00791DF3 /* GatorAidLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */; };
 		3FDC177E1BF7B6B400791DF3 /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177C1BF7B6B400791DF3 /* Password.png */; };
 		3FDC177F1BF7B6B400791DF3 /* Username.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC177D1BF7B6B400791DF3 /* Username.png */; };
-		3FE1B83F1BF50496001FA2DB /* Menu 2-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */; };
 		3FE1B8401BF50496001FA2DB /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE1B83E1BF50496001FA2DB /* Menu-25.png */; };
 		83551C871C037620000BA1E8 /* GPATrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83551C861C037620000BA1E8 /* GPATrackViewController.swift */; };
 		83551C891C03763E000BA1E8 /* courseTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83551C881C03763E000BA1E8 /* courseTrackViewController.swift */; };
@@ -103,17 +97,11 @@
 		3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Generic_button.png; sourceTree = "<group>"; };
 		3FCCD05E1BFBC34D00E8A4BE /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
-		3FDC176B1BF7A6DE00791DF3 /* Main Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main Page.png"; sourceTree = "<group>"; };
-		3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock Filled-25.png"; sourceTree = "<group>"; };
-		3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Male Filled-25.png"; sourceTree = "<group>"; };
 		3FDC17711BF7AE0F00791DF3 /* Login background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login background.png"; sourceTree = "<group>"; };
 		3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignIn_bg.png; sourceTree = "<group>"; };
-		3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignIn_button.png; sourceTree = "<group>"; };
-		3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp_button.png; sourceTree = "<group>"; };
 		3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GatorAidLogo.png; sourceTree = "<group>"; };
 		3FDC177C1BF7B6B400791DF3 /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
 		3FDC177D1BF7B6B400791DF3 /* Username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Username.png; sourceTree = "<group>"; };
-		3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu 2-26.png"; sourceTree = "<group>"; };
 		3FE1B83E1BF50496001FA2DB /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
 		83551C861C037620000BA1E8 /* GPATrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPATrackViewController.swift; sourceTree = "<group>"; };
 		83551C881C03763E000BA1E8 /* courseTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = courseTrackViewController.swift; sourceTree = "<group>"; };
@@ -235,21 +223,15 @@
 			children = (
 				3FCCD05E1BFBC34D00E8A4BE /* line.png */,
 				3FCCD0561BFBB6D000E8A4BE /* Sample button.png */,
-				3FDC176D1BF7AE0800791DF3 /* Lock Filled-25.png */,
 				3FCCD0581BFBB91600E8A4BE /* Login_button.png */,
 				3FCCD05C1BFBBE3D00E8A4BE /* Generic_button.png */,
 				3FCCD05A1BFBB97400E8A4BE /* century_tower_blurred.png */,
 				3FDC177C1BF7B6B400791DF3 /* Password.png */,
 				3FDC177D1BF7B6B400791DF3 /* Username.png */,
-				3FDC176E1BF7AE0800791DF3 /* User Male Filled-25.png */,
 				3FDC17741BF7AEEC00791DF3 /* SignIn_bg.png */,
 				3FABEB641BFAA96D00A47219 /* Cancel-25.png */,
 				3FDC177A1BF7AF6E00791DF3 /* GatorAidLogo.png */,
-				3FDC17751BF7AEEC00791DF3 /* SignIn_button.png */,
-				3FDC17761BF7AEEC00791DF3 /* SignUp_button.png */,
 				3FDC17711BF7AE0F00791DF3 /* Login background.png */,
-				3FDC176B1BF7A6DE00791DF3 /* Main Page.png */,
-				3FE1B83D1BF50496001FA2DB /* Menu 2-26.png */,
 				3FE1B83E1BF50496001FA2DB /* Menu-25.png */,
 			);
 			name = icons;
@@ -313,13 +295,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FDC17781BF7AEEC00791DF3 /* SignIn_button.png in Resources */,
 				3FDC17721BF7AE0F00791DF3 /* Login background.png in Resources */,
-				3FE1B83F1BF50496001FA2DB /* Menu 2-26.png in Resources */,
 				3FCCD0591BFBB91600E8A4BE /* Login_button.png in Resources */,
 				3F91331D1BDE790A00C2E690 /* LaunchScreen.storyboard in Resources */,
 				3FE1B8401BF50496001FA2DB /* Menu-25.png in Resources */,
-				3FDC17791BF7AEEC00791DF3 /* SignUp_button.png in Resources */,
 				3FDC177E1BF7B6B400791DF3 /* Password.png in Resources */,
 				3FCCD05F1BFBC34D00E8A4BE /* line.png in Resources */,
 				3FCCD0571BFBB6D000E8A4BE /* Sample button.png in Resources */,
@@ -327,10 +306,7 @@
 				3FDC177B1BF7AF6E00791DF3 /* GatorAidLogo.png in Resources */,
 				3F91331A1BDE790A00C2E690 /* Assets.xcassets in Resources */,
 				3FABEB651BFAA96D00A47219 /* Cancel-25.png in Resources */,
-				3FDC17701BF7AE0800791DF3 /* User Male Filled-25.png in Resources */,
-				3FDC176C1BF7A6DE00791DF3 /* Main Page.png in Resources */,
 				3F9133181BDE790A00C2E690 /* Main.storyboard in Resources */,
-				3FDC176F1BF7AE0800791DF3 /* Lock Filled-25.png in Resources */,
 				3FCCD05D1BFBBE3D00E8A4BE /* Generic_button.png in Resources */,
 				3FDC177F1BF7B6B400791DF3 /* Username.png in Resources */,
 				3FCCD05B1BFBB97400E8A4BE /* century_tower_blurred.png in Resources */,

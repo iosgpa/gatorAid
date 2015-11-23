@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class GPATrackViewController: UIViewController {
 
+    // UI Variable declarations
+    @IBOutlet weak var Menu: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initMenuButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +25,16 @@ class GPATrackViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func Logout(sender: AnyObject) {
+        PFUser.logOut()
+        let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
     }
-    */
-
+    
+    // Initialize Menu button
+    func initMenuButton() {
+        // Menu.target = self.revealViewController()
+        Menu.action = Selector("revealToggle:")
+        // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
 }

@@ -38,9 +38,19 @@ class myAdvisorViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (PFUser.currentUser() != nil) {
+        if (PFUser.currentUser() != nil && advisor.count == 0) {
             self.getAdvisor()
         }
+        else if (PFUser.currentUser() != nil) {
+            self.printInfo()
+        }
+        else {}
+    }
+    
+    @IBAction func Logout(sender: AnyObject) {
+        PFUser.logOut()
+        let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
     }
     
     // Initialize Menu button

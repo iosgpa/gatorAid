@@ -51,6 +51,20 @@ class signInViewController: UIViewController {
         }
     }
     
+    // Get the profile of the current user
+    func getCurrentUserProfile() {
+        let query:PFQuery = PFQuery(className: "Profile")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    print(obj)
+                }
+            }
+        }
+    }
+    
     // Proceed to Home page if the user is already logged in or user meet login credentials
     func goHome() {
         performSegueWithIdentifier("signIn2Home", sender: nil)

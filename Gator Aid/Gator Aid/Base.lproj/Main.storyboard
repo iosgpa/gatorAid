@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -204,7 +204,11 @@
                                 <items>
                                     <navigationItem id="8Xd-sd-S1f">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="5lx-Xs-ZL7"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="I7A-tr-B6J"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="I7A-tr-B6J">
+                                            <connections>
+                                                <action selector="Logout:" destination="znn-Ve-2Sp" id="GPB-ee-xgu"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="default">
@@ -334,25 +338,135 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="iTq-LC-r16">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Gpa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="put-aJ-pcy">
+                                <rect key="frame" x="220" y="150" width="161" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="vrU-vg-fgv">
+                                <rect key="frame" x="88" y="270" width="425" height="9"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOG-Pf-1Oz">
+                                <rect key="frame" x="220" y="197" width="161" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-aM-1XM">
+                                <rect key="frame" x="88" y="287" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-fD-Aut">
+                                <rect key="frame" x="88" y="310" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWO-eJ-z4O">
+                                <rect key="frame" x="88" y="333" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnK-zl-u51">
+                                <rect key="frame" x="88" y="355" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v60-pd-hPE">
+                                <rect key="frame" x="88" y="376" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhc-rv-bzz">
+                                <rect key="frame" x="88" y="397" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7B7-Zr-02G">
+                                <rect key="frame" x="88" y="417" width="425" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="QS0-f7-ApX">
+                                <rect key="frame" x="88" y="446" width="425" height="9"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your advisor is Todd Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDU-LZ-uQC">
+                                <rect key="frame" x="88" y="475" width="425" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CISE, Room 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG6-Y5-33h">
+                                <rect key="frame" x="88" y="503" width="425" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v60-pd-hPE" firstAttribute="centerX" secondItem="NnK-zl-u51" secondAttribute="centerX" id="4RE-lb-R3D"/>
+                            <constraint firstItem="7B7-Zr-02G" firstAttribute="top" secondItem="Yhc-rv-bzz" secondAttribute="bottom" constant="-1" id="6tc-33-Oen"/>
+                            <constraint firstItem="NnK-zl-u51" firstAttribute="centerX" secondItem="zWO-eJ-z4O" secondAttribute="centerX" id="87Y-Wd-AWL"/>
+                            <constraint firstItem="f1r-aM-1XM" firstAttribute="width" secondItem="vrU-vg-fgv" secondAttribute="width" id="AJW-cQ-AJ3"/>
+                            <constraint firstItem="tXL-fD-Aut" firstAttribute="centerX" secondItem="f1r-aM-1XM" secondAttribute="centerX" id="Cv5-Uo-b38"/>
+                            <constraint firstItem="Yhc-rv-bzz" firstAttribute="width" secondItem="v60-pd-hPE" secondAttribute="width" id="D6g-93-0AJ"/>
+                            <constraint firstItem="zWO-eJ-z4O" firstAttribute="centerX" secondItem="tXL-fD-Aut" secondAttribute="centerX" id="EVC-HF-ojY"/>
+                            <constraint firstItem="QS0-f7-ApX" firstAttribute="top" secondItem="7B7-Zr-02G" secondAttribute="bottom" constant="8" id="FTO-2E-hMC"/>
+                            <constraint firstItem="f1r-aM-1XM" firstAttribute="centerX" secondItem="vrU-vg-fgv" secondAttribute="centerX" id="Fks-BK-dgD"/>
+                            <constraint firstItem="XDU-LZ-uQC" firstAttribute="width" secondItem="QS0-f7-ApX" secondAttribute="width" id="G4c-Sl-6LV"/>
+                            <constraint firstItem="AG6-Y5-33h" firstAttribute="centerX" secondItem="XDU-LZ-uQC" secondAttribute="centerX" id="IqA-zc-pNc"/>
+                            <constraint firstItem="vrU-vg-fgv" firstAttribute="centerX" secondItem="iTq-LC-r16" secondAttribute="centerX" id="Kt8-Ff-tFq"/>
                             <constraint firstItem="iTq-LC-r16" firstAttribute="leading" secondItem="tH4-df-2hC" secondAttribute="leadingMargin" constant="-20" id="LHE-sG-WaU"/>
+                            <constraint firstItem="zWO-eJ-z4O" firstAttribute="width" secondItem="tXL-fD-Aut" secondAttribute="width" id="MjH-fz-HBT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iTq-LC-r16" secondAttribute="trailing" constant="-20" id="MtO-yB-ZBK"/>
+                            <constraint firstItem="QS0-f7-ApX" firstAttribute="width" secondItem="vrU-vg-fgv" secondAttribute="width" id="O8K-L2-aek"/>
+                            <constraint firstItem="Yhc-rv-bzz" firstAttribute="top" secondItem="v60-pd-hPE" secondAttribute="bottom" id="ODw-Y9-BGQ"/>
+                            <constraint firstItem="f1r-aM-1XM" firstAttribute="top" secondItem="vrU-vg-fgv" secondAttribute="bottom" constant="8" id="Ozp-2q-1aC"/>
+                            <constraint firstItem="zWO-eJ-z4O" firstAttribute="top" secondItem="tXL-fD-Aut" secondAttribute="bottom" constant="2" id="Sfw-re-zbo"/>
+                            <constraint firstItem="7B7-Zr-02G" firstAttribute="centerX" secondItem="Yhc-rv-bzz" secondAttribute="centerX" id="Tpj-aZ-QxH"/>
                             <constraint firstItem="RRJ-3n-XF6" firstAttribute="top" secondItem="iTq-LC-r16" secondAttribute="bottom" id="WaN-6L-luX"/>
+                            <constraint firstItem="hOG-Pf-1Oz" firstAttribute="centerX" secondItem="put-aJ-pcy" secondAttribute="centerX" id="ZbT-Zt-gXo"/>
+                            <constraint firstItem="AG6-Y5-33h" firstAttribute="top" secondItem="XDU-LZ-uQC" secondAttribute="bottom" constant="4" id="adF-dP-5vc"/>
+                            <constraint firstItem="hOG-Pf-1Oz" firstAttribute="top" secondItem="put-aJ-pcy" secondAttribute="bottom" constant="8" id="avH-iH-HWB"/>
+                            <constraint firstItem="AG6-Y5-33h" firstAttribute="width" secondItem="XDU-LZ-uQC" secondAttribute="width" id="bnA-kC-7ae"/>
                             <constraint firstItem="iTq-LC-r16" firstAttribute="top" secondItem="tH4-df-2hC" secondAttribute="topMargin" id="ciG-Hd-Cf3"/>
+                            <constraint firstItem="vrU-vg-fgv" firstAttribute="width" secondItem="iTq-LC-r16" secondAttribute="width" multiplier="319:450" id="fic-2v-k3R"/>
+                            <constraint firstItem="tXL-fD-Aut" firstAttribute="width" secondItem="f1r-aM-1XM" secondAttribute="width" id="gBN-Ny-ZK5"/>
+                            <constraint firstItem="NnK-zl-u51" firstAttribute="width" secondItem="zWO-eJ-z4O" secondAttribute="width" id="hE8-qx-qaX"/>
+                            <constraint firstItem="XDU-LZ-uQC" firstAttribute="centerX" secondItem="QS0-f7-ApX" secondAttribute="centerX" id="nCT-gf-qhh"/>
+                            <constraint firstItem="vrU-vg-fgv" firstAttribute="top" secondItem="hOG-Pf-1Oz" secondAttribute="bottom" constant="30" id="p4E-yt-BJG"/>
+                            <constraint firstItem="XDU-LZ-uQC" firstAttribute="top" secondItem="QS0-f7-ApX" secondAttribute="bottom" constant="20" id="pkF-Zz-Ptn"/>
+                            <constraint firstItem="v60-pd-hPE" firstAttribute="top" secondItem="NnK-zl-u51" secondAttribute="bottom" id="rbl-dm-yL3"/>
+                            <constraint firstItem="Yhc-rv-bzz" firstAttribute="centerX" secondItem="v60-pd-hPE" secondAttribute="centerX" id="rwp-J6-XZD"/>
+                            <constraint firstItem="7B7-Zr-02G" firstAttribute="width" secondItem="Yhc-rv-bzz" secondAttribute="width" id="sF4-hH-cC6"/>
+                            <constraint firstItem="hOG-Pf-1Oz" firstAttribute="width" secondItem="put-aJ-pcy" secondAttribute="width" id="u12-2x-z2c"/>
+                            <constraint firstItem="QS0-f7-ApX" firstAttribute="centerX" secondItem="vrU-vg-fgv" secondAttribute="centerX" id="uoW-c3-Jyz"/>
+                            <constraint firstItem="v60-pd-hPE" firstAttribute="width" secondItem="NnK-zl-u51" secondAttribute="width" id="w7R-ca-15x"/>
+                            <constraint firstItem="put-aJ-pcy" firstAttribute="centerX" secondItem="iTq-LC-r16" secondAttribute="centerX" id="xEH-MS-WqP"/>
+                            <constraint firstItem="NnK-zl-u51" firstAttribute="top" secondItem="zWO-eJ-z4O" secondAttribute="bottom" constant="1" id="xed-nz-Gek"/>
+                            <constraint firstItem="tXL-fD-Aut" firstAttribute="top" secondItem="f1r-aM-1XM" secondAttribute="bottom" constant="2" id="yaQ-PU-3wi"/>
+                            <constraint firstItem="iTq-LC-r16" firstAttribute="top" secondItem="put-aJ-pcy" secondAttribute="top" constant="-150" id="zDf-Ck-Qog"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fIz-I8-5T2">
-                        <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="WLS-yq-gjV"/>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ugr-1V-b61">
+                    <navigationItem key="navigationItem" id="c4k-yd-vZC">
+                        <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="TI6-EL-icL"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="GZG-FV-OMB">
                             <connections>
-                                <action selector="Logout:" destination="zfw-Lm-CgR" id="zVf-Rh-53Y"/>
+                                <action selector="Logout:" destination="zfw-Lm-CgR" id="U95-vn-kbx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Menu" destination="WLS-yq-gjV" id="Aqe-vM-deR"/>
+                        <outlet property="Menu" destination="TI6-EL-icL" id="ROA-gR-TEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnN-5R-gir" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1092,7 +1206,11 @@
                                 <items>
                                     <navigationItem id="JaX-gr-8dt">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="YxT-Hj-lSe"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="hRx-Bl-81c"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="hRx-Bl-81c">
+                                            <connections>
+                                                <action selector="Logout:" destination="BTS-dO-nXn" id="N3b-2w-EIl"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="default">
@@ -1113,6 +1231,9 @@
                             <constraint firstItem="QxI-Vd-bxN" firstAttribute="centerX" secondItem="PcW-Dk-Tu1" secondAttribute="centerX" id="qvf-77-ySj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Menu" destination="YxT-Hj-lSe" id="dK9-XA-Oby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6K-HE-rHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1130,6 +1251,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="lV3-9X-ntO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSX-UC-TS3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
@@ -1139,7 +1263,11 @@
                                 <items>
                                     <navigationItem id="CHn-jF-Okl">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="skV-uT-VPc"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="EK0-fz-AyR"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="EK0-fz-AyR">
+                                            <connections>
+                                                <action selector="Logout:" destination="ulo-05-zsx" id="P3T-wb-ZzT"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="default">
@@ -1148,9 +1276,6 @@
                                     </mask>
                                 </variation>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="lV3-9X-ntO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1163,6 +1288,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="lV3-9X-ntO" secondAttribute="trailing" constant="-20" id="xEP-Qf-4gt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Menu" destination="skV-uT-VPc" id="2cN-59-IkQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2h-qT-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1184,10 +1312,10 @@
         <image name="line.png" width="319" height="9"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lGU-P3-C8x"/>
-        <segue reference="mIj-Y0-PzL"/>
         <segue reference="MOp-47-GOs"/>
         <segue reference="oKU-tG-w0u"/>
+        <segue reference="emT-Ip-WEb"/>
+        <segue reference="mIj-Y0-PzL"/>
         <segue reference="466-eF-iex"/>
     </inferredMetricsTieBreakers>
 </document>
