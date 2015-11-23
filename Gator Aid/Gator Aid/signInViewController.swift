@@ -59,8 +59,7 @@ class signInViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    self.advisor.append(obj)
-                    self.printInfo()
+                    print(obj)
                 }
             }
         }

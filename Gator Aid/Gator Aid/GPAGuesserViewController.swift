@@ -357,7 +357,11 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    
+    @IBAction func Logout(sender: AnyObject) {
+        PFUser.logOut()
+        let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
+    }
     
     // Initialize Menu button
     func initMenuButton() {
