@@ -113,12 +113,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-F5-2z4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOq-vb-Zsf">
-                                <rect key="frame" x="265" y="137" width="71" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="oa2-cg-0mL">
                                 <rect key="frame" x="140" y="202" width="319" height="9"/>
                             </imageView>
@@ -190,6 +184,9 @@
                                 <state key="normal" title="CALCULATE" backgroundImage="Sample button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateGPA:" destination="znn-Ve-2Sp" eventType="touchUpInside" id="l3T-Ja-J7z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-tz-8Vt">
                                 <rect key="frame" x="24" y="46" width="25" height="25"/>
@@ -198,7 +195,7 @@
                                     <segue destination="dIv-wQ-H97" kind="show" id="oKU-tG-w0u"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-xk-toz">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-xk-toz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="OrK-ca-U2S"/>
@@ -215,10 +212,17 @@
                                     </mask>
                                 </variation>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="TOq-vb-Zsf">
+                                <rect key="frame" x="140" y="137" width="319" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AyO-3j-jzh" firstAttribute="centerY" secondItem="Tye-Ua-bfo" secondAttribute="centerY" id="0br-Pl-rtE"/>
+                            <constraint firstItem="TOq-vb-Zsf" firstAttribute="leading" secondItem="gBd-7v-Wtp" secondAttribute="leadingMargin" constant="60" id="1Gl-Za-bPE"/>
                             <constraint firstItem="Dpv-F5-2z4" firstAttribute="top" secondItem="gBd-7v-Wtp" secondAttribute="topMargin" id="1aE-On-S65"/>
                             <constraint firstItem="G8v-zz-iMW" firstAttribute="leading" secondItem="7gj-w1-bvE" secondAttribute="trailing" constant="108" id="2ZV-wn-cEu"/>
                             <constraint firstItem="eyC-HI-6HY" firstAttribute="centerX" secondItem="OqL-gq-fT8" secondAttribute="centerX" id="31z-Gf-vuK"/>
@@ -260,6 +264,7 @@
                             <constraint firstItem="7gj-w1-bvE" firstAttribute="centerX" secondItem="OqL-gq-fT8" secondAttribute="centerX" id="jzR-NH-DuV"/>
                             <constraint firstItem="oa2-cg-0mL" firstAttribute="centerX" secondItem="TOq-vb-Zsf" secondAttribute="centerX" id="kmi-wx-CY5"/>
                             <constraint firstItem="oa2-cg-0mL" firstAttribute="top" secondItem="TOq-vb-Zsf" secondAttribute="bottom" constant="29" id="kre-yR-Ynl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TOq-vb-Zsf" secondAttribute="trailing" constant="60" id="n8c-em-iwc"/>
                             <constraint firstItem="7gj-w1-bvE" firstAttribute="top" secondItem="mAG-wf-yrt" secondAttribute="bottom" constant="8" id="npU-uQ-O9y"/>
                             <constraint firstItem="TOq-vb-Zsf" firstAttribute="centerX" secondItem="mbb-xk-toz" secondAttribute="centerX" id="ns2-iO-hpX"/>
                             <constraint firstItem="EwU-Kt-yJ5" firstAttribute="centerY" secondItem="Hj9-ds-uqc" secondAttribute="centerY" id="oDx-KN-330"/>
