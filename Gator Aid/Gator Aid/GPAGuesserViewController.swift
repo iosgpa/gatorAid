@@ -40,13 +40,11 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
             // Hide the navigation if no user is logged in
             self.nav.hidden = true
             self.cancel.enabled = true
-            self.background.hidden = false
         }
         else {
             // Hide and diable the cancel button
             self.cancel.hidden = true
             self.cancel.enabled = false
-            self.background.hidden = true
         }
         var gPickerView1 = UIPickerView()
         var gPickerView2 = UIPickerView()
