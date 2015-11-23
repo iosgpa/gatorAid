@@ -226,6 +226,31 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.view.endEditing(true)
     }
     
+    @IBAction func calculateGPA(sender: AnyObject) {
+        if ((grade1.text == "" && credit1.text != "") || (credit1.text == "" && grade1.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else if ((grade2.text == "" && credit2.text != "") || (credit2.text == "" && grade2.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else if ((grade3.text == "" && credit3.text != "") || (credit3.text == "" && grade3.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else if ((grade4.text == "" && credit4.text != "") || (credit4.text == "" && grade4.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else if ((grade5.text == "" && credit5.text != "") || (credit5.text == "" && grade5.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else if ((grade6.text == "" && credit6.text != "") || (credit6.text == "" && grade6.text != "")) {
+            gpaMsg.text = "Please ensure that adjacent fields are filled out, or are both blank!"
+        }
+        else {
+            gpaMsg.text = "0.0"
+            //Algorithm code will go here
+        }
+    }
+    
     
     
     // Initialize Menu button
