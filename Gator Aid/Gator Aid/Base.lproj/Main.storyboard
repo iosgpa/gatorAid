@@ -1303,6 +1303,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calculateGPA:" destination="znn-Ve-2Sp" eventType="touchUpInside" id="IFR-ps-r0Z"/>
+                                    <action selector="doit:" destination="ulo-05-zsx" eventType="touchUpInside" id="B3l-15-Dfb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the credit hours of the courses you will be taking and your desired GPA." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-m0-m89">
@@ -1319,6 +1320,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XtU-IY-sZb">
                                 <rect key="frame" x="79" y="546" width="240" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ulo-05-zsx" id="kBZ-oe-qCw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1371,7 +1375,7 @@
                         <outlet property="credit6" destination="bup-3F-qCA" id="RIe-f4-uV3"/>
                         <outlet property="desiredGPA" destination="cJt-VL-ioG" id="Tcf-xc-qka"/>
                         <outlet property="msgText" destination="FSG-m0-m89" id="W3R-ya-u4t"/>
-                        <outlet property="tableView" destination="XtU-IY-sZb" id="COL-in-mky"/>
+                        <outlet property="tableView" destination="XtU-IY-sZb" id="Nca-sG-r51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2h-qT-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
