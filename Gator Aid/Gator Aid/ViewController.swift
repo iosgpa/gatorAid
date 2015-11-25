@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+var currUserMajor = String()
 var currUserAdvisor = [PFObject]()
 var currUserProfile = [PFObject]()
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
