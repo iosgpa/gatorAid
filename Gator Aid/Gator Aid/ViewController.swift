@@ -12,6 +12,7 @@ import Parse
 var currUserMajor = String()
 var currUserAdvisor = [PFObject]()
 var currUserProfile = [PFObject]()
+var currUserSchedule = [PFObject]()
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Variable Declarations
@@ -20,16 +21,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var currGpa: UILabel!
     @IBOutlet weak var msg1: UILabel!
     @IBOutlet weak var msg2: UILabel!
-    var classEnrolled = [PFObject]()
+    var tmp = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
+        if(currUserSchedule.count == 0) {
+            self.getCurrentUserSchedule()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,13 +56,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Define each row of the table
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCourseId", forIndexPath: indexPath)
-        // Set the label of the cell
+        cell.textLabel?.text = String(currUserSchedule[indexPath.row]["courseName"])
         return cell
     }
     
     // return the number of rows in the table
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classEnrolled.count
+        return currUserSchedule.count
     }
     
     // Initialize Menu button
@@ -75,6 +78,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
     }
 
+    func getCurrentUserSchedule() {
+        let query:PFQuery = PFQuery(className: "CourseTrack")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    self.tmp.append(obj["courses"] as! PFObject)
+                }
+                
+                let query2:PFQuery = PFQuery(className: "Courses")
+                query2.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+                    if error == nil {
+                        for obj in objects! {
+                            for o in self.tmp {
+                                if obj == o {
+                                    currUserSchedule.append(obj)
+                                }
+                            }
+                        }
+                        print(currUserSchedule)
+                        self.tabCourses.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
     // Get the advisor of the current logged in user
     func getCurrentUserAdvisor() {
         let tmp = PFUser.currentUser() as! PFObject
