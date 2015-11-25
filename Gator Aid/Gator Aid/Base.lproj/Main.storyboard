@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1294,6 +1294,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XtU-IY-sZb">
+                                <rect key="frame" x="79" y="546" width="240" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1301,9 +1305,11 @@
                             <constraint firstItem="bup-3F-qCA" firstAttribute="top" secondItem="YFG-jm-h98" secondAttribute="bottom" constant="8" id="130-kj-9wA"/>
                             <constraint firstItem="bup-3F-qCA" firstAttribute="centerX" secondItem="YFG-jm-h98" secondAttribute="centerX" id="1JU-Mu-hbC"/>
                             <constraint firstItem="OSX-UC-TS3" firstAttribute="centerX" secondItem="24T-dI-9Ut" secondAttribute="centerX" id="38L-iE-MhG"/>
+                            <constraint firstItem="XtU-IY-sZb" firstAttribute="leading" secondItem="24T-dI-9Ut" secondAttribute="leadingMargin" constant="59" id="3sU-AO-ZSZ"/>
                             <constraint firstItem="lV3-9X-ntO" firstAttribute="top" secondItem="24T-dI-9Ut" secondAttribute="topMargin" id="4PK-Ya-WRJ"/>
                             <constraint firstItem="soH-FT-qdA" firstAttribute="top" secondItem="Pna-DT-SDJ" secondAttribute="bottom" constant="8" id="6OH-zC-Crf"/>
                             <constraint firstItem="1XD-za-MCN" firstAttribute="width" secondItem="eWw-8t-sIQ" secondAttribute="width" id="74d-rh-y86"/>
+                            <constraint firstItem="XtU-IY-sZb" firstAttribute="centerX" secondItem="2kg-zt-zgh" secondAttribute="centerX" id="DGd-Ue-eZk"/>
                             <constraint firstItem="lV3-9X-ntO" firstAttribute="leading" secondItem="24T-dI-9Ut" secondAttribute="leadingMargin" constant="-20" id="EfA-7y-Tx5"/>
                             <constraint firstItem="soH-FT-qdA" firstAttribute="centerX" secondItem="Pna-DT-SDJ" secondAttribute="centerX" id="Fyo-3b-8ZU"/>
                             <constraint firstItem="YFG-jm-h98" firstAttribute="top" secondItem="soH-FT-qdA" secondAttribute="bottom" constant="8" id="GD4-5R-s1W"/>
@@ -1311,6 +1317,7 @@
                             <constraint firstItem="cJt-VL-ioG" firstAttribute="centerX" secondItem="bup-3F-qCA" secondAttribute="centerX" id="LqV-MA-yib"/>
                             <constraint firstItem="FSG-m0-m89" firstAttribute="leading" secondItem="24T-dI-9Ut" secondAttribute="leadingMargin" constant="60" id="M4M-Hi-JIv"/>
                             <constraint firstItem="FSG-m0-m89" firstAttribute="top" secondItem="OSX-UC-TS3" secondAttribute="bottom" constant="43" id="NJT-Se-FFK"/>
+                            <constraint firstItem="XtU-IY-sZb" firstAttribute="top" secondItem="2kg-zt-zgh" secondAttribute="bottom" constant="8" symbolic="YES" id="QVz-I7-d1W"/>
                             <constraint firstItem="YFG-jm-h98" firstAttribute="width" secondItem="soH-FT-qdA" secondAttribute="width" id="UuW-j3-tsB"/>
                             <constraint firstItem="2kg-zt-zgh" firstAttribute="top" secondItem="cJt-VL-ioG" secondAttribute="bottom" constant="39" id="YIh-g6-aYL"/>
                             <constraint firstItem="Pna-DT-SDJ" firstAttribute="top" secondItem="1XD-za-MCN" secondAttribute="bottom" constant="8" id="aCc-46-sSs"/>
@@ -1323,6 +1330,7 @@
                             <constraint firstItem="2kg-zt-zgh" firstAttribute="centerX" secondItem="cJt-VL-ioG" secondAttribute="centerX" id="f3D-W6-9BX"/>
                             <constraint firstItem="soH-FT-qdA" firstAttribute="width" secondItem="Pna-DT-SDJ" secondAttribute="width" id="kaN-oV-2vv"/>
                             <constraint firstItem="1XD-za-MCN" firstAttribute="centerX" secondItem="eWw-8t-sIQ" secondAttribute="centerX" id="n1l-Q4-zSr"/>
+                            <constraint firstItem="Ccc-xo-c4S" firstAttribute="top" secondItem="XtU-IY-sZb" secondAttribute="bottom" constant="8" symbolic="YES" id="nyg-um-A2k"/>
                             <constraint firstItem="cJt-VL-ioG" firstAttribute="top" secondItem="bup-3F-qCA" secondAttribute="bottom" constant="39" id="ovf-le-X30"/>
                             <constraint firstItem="Pna-DT-SDJ" firstAttribute="width" secondItem="1XD-za-MCN" secondAttribute="width" id="pT1-hk-sQH"/>
                             <constraint firstItem="OSX-UC-TS3" firstAttribute="width" secondItem="24T-dI-9Ut" secondAttribute="width" id="uSU-gU-ghI"/>
@@ -1341,6 +1349,7 @@
                         <outlet property="credit6" destination="bup-3F-qCA" id="RIe-f4-uV3"/>
                         <outlet property="desiredGPA" destination="cJt-VL-ioG" id="Tcf-xc-qka"/>
                         <outlet property="msgText" destination="FSG-m0-m89" id="W3R-ya-u4t"/>
+                        <outlet property="tableView" destination="XtU-IY-sZb" id="COL-in-mky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2h-qT-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
