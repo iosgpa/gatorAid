@@ -9,8 +9,29 @@
 import UIKit
 import Parse
 
-class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return final.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        
+        let (grd) = final [indexPath.row]
+        
+        
+        cell.textLabel?.text = grd
+        return cell
+    }
+    
+    var final = [String]()
+    var mess = "Please enter the credit hours of the courses you will be taking and your desired GPA."
+    
     // UI Variable declarations
     @IBOutlet weak var Menu: UIBarButtonItem!
     @IBOutlet weak var msgText: UILabel!
@@ -21,11 +42,13 @@ class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var credit5: UITextField!
     @IBOutlet weak var credit6: UITextField!
     @IBOutlet weak var desiredGPA: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     var pickCredit = ["1.0", "2.0", "3.0", "4.0", "5.0"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
+        
         
         var cPickerView1 = UIPickerView()
         var cPickerView2 = UIPickerView()
@@ -130,7 +153,7 @@ class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,4 +171,247 @@ class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPic
         Menu.action = Selector("revealToggle:")
         // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    
+    @IBAction func doit(sender: AnyObject)
+    {
+        final.removeAll()
+        msgText.text = mess
+        var gpa = Double(desiredGPA.text!)
+        
+        var cgpa = String(format: "%.3f", gpa!)
+        
+        var grade: [String] = [ "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"]
+        var value: [Double] = [4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67, 0]
+        
+        
+        var str = ""
+        var temp = 0.00
+        
+        var temp1 = 0.00
+        var temp2 = 0.00
+        var temp3 = 0.00
+        var temp4 = 0.00
+        var temp5 = 0.00
+        var temp6 = 0.00
+        
+        var stemp = ""
+        var sum = 0.00
+        
+        var a = 0
+        var b = 0
+        var c = 0
+        var d = 0
+        var e = 0
+        var f = 0
+        
+        var i = 0
+        var w = false
+        var t = 0.00
+        
+        while(i < 5 && w == false)
+        {
+            if(credit1.text != "" && credit2.text == "")
+            {
+                sum = Double(credit1.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    temp1 = Double(credit1.text!)! * value[a]
+                    temp = (temp1)/sum
+                    stemp = String(format: "%.3f", temp)
+                    if(stemp < cgpa)
+                    {
+                        a = 12
+                    }
+                    if (stemp == cgpa)
+                    {
+                        str = grade[a]
+                        final.append(str)
+                        w = true
+                    }
+                }
+            }
+            else if(credit2.text != "" && credit3.text == "")
+            {
+                sum = Double(credit1.text!)! + Double(credit2.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    for var b = 0; b < 12; ++b
+                    {
+                        temp1 = Double(credit1.text!)! * value[a]
+                        temp2 = Double(credit2.text!)! * value[b]
+                        temp = (temp1 + temp2)/sum
+                        stemp = String(format: "%.3f", temp)
+                        if(stemp < cgpa)
+                        {
+                            b = 12
+                        }
+                        if (stemp == cgpa)
+                        {
+                            str = grade[a] + " " + grade[b]
+                            final.append(str)
+                            w = true
+                        }
+                    }
+                }
+            }
+            else if(credit3.text != "" && credit4.text == "")
+            {
+                sum = Double(credit1.text!)! + Double(credit2.text!)! + Double(credit3.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    for var b = 0; b < 12; ++b
+                    {
+                        for var c = 0; c < 12; ++c
+                        {
+                            temp1 = Double(credit1.text!)! * value[a]
+                            temp2 = Double(credit2.text!)! * value[b]
+                            temp3 = Double(credit3.text!)! * value[c]
+                            temp = (temp1 + temp2 + temp3)/sum
+                            stemp = String(format: "%.3f", temp)
+                            if(stemp < cgpa)
+                            {
+                                c = 12
+                            }
+                            if (stemp == cgpa)
+                            {
+                                str = grade[a] + " " + grade[b] + " " + grade[c]
+                                final.append(str)
+                                w = true
+                            }
+                        }
+                    }
+                }
+                
+            }
+            else if(credit4.text != "" && credit5.text == "")
+            {
+                sum = Double(credit1.text!)! + Double(credit2.text!)! + Double(credit3.text!)! + Double(credit4.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    for var b = 0; b < 12; ++b
+                    {
+                        for var c = 0; c < 12; ++c
+                        {
+                            for var d = 0; d < 12; ++d
+                            {
+                                temp1 = Double(credit1.text!)! * value[a]
+                                temp2 = Double(credit2.text!)! * value[b]
+                                temp3 = Double(credit3.text!)! * value[c]
+                                temp4 = Double(credit4.text!)! * value[d]
+                                temp = (temp1 + temp2 + temp3 + temp4)/sum
+                                stemp = String(format: "%.3f", temp)
+                                if(stemp < cgpa)
+                                {
+                                    d = 12
+                                }
+                                if (stemp == cgpa)
+                                {
+                                    str = grade[a] + " " + grade[b] + " " + grade[c] + " " + grade[d]
+                                    final.append(str)
+                                    w = true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if(credit5.text != "" && credit6.text == "")
+            {
+                sum = Double(credit1.text!)! + Double(credit2.text!)! + Double(credit3.text!)! + Double(credit4.text!)! + Double(credit5.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    for var b = 0; b < 12; ++b
+                    {
+                        for var c = 0; c < 12; ++c
+                        {
+                            for var d = 0; d < 12; ++d
+                            {
+                                for var e = 0; e < 12; ++e
+                                {
+                                    temp1 = Double(credit1.text!)! * value[a]
+                                    temp2 = Double(credit2.text!)! * value[b]
+                                    temp3 = Double(credit3.text!)! * value[c]
+                                    temp4 = Double(credit4.text!)! * value[d]
+                                    temp5 = Double(credit5.text!)! * value[e]
+                                    temp = (temp1 + temp2 + temp3 + temp4 + temp5)/sum
+                                    stemp = String(format: "%.3f", temp)
+                                    if(stemp < cgpa)
+                                    {
+                                        e = 12
+                                    }
+                                    if (stemp == cgpa)
+                                    {
+                                        str = grade[a] + " " + grade[b] + " " + grade[c] + " " + grade[d] + " " + grade[e]
+                                        final.append(str)
+                                        w = true
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if(credit6.text != "")
+            {
+                sum = Double(credit1.text!)! + Double(credit2.text!)! + Double(credit3.text!)! + Double(credit4.text!)! + Double(credit5.text!)! + Double(credit6.text!)!
+                for var a = 0; a < 12; ++a
+                {
+                    for var b = 0; b < 12; ++b
+                    {
+                        for var c = 0; c < 12; ++c
+                        {
+                            for var d = 0; d < 12; ++d
+                            {
+                                for var e = 0; e < 12; ++e
+                                {
+                                    for var f = 0; f < 12; ++f
+                                    {
+                                        temp1 = Double(credit1.text!)! * value[a]
+                                        temp2 = Double(credit2.text!)! * value[b]
+                                        temp3 = Double(credit3.text!)! * value[c]
+                                        temp4 = Double(credit4.text!)! * value[d]
+                                        temp5 = Double(credit5.text!)! * value[e]
+                                        temp6 = Double(credit6.text!)! * value[f]
+                                        temp = (temp1 + temp2 + temp3 + temp4 + temp5 + temp6)/sum
+                                        stemp = String(format: "%.3f", temp)
+                                        if(stemp < cgpa)
+                                        {
+                                            f = 12
+                                        }
+                                        if (stemp == cgpa)
+                                        {
+                                            str = grade[a] + " " + grade[b] + " " + grade[c] + " " + grade[d] + " " + grade[e] + " " + grade[f]
+                                            final.append(str)
+                                            w = true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                msgText.text =  "Please enter the correct way"
+            }
+            if(w == false)
+            {
+                ++i
+                
+                var y = Double(cgpa)
+                y = y! - 0.010
+                cgpa = String(format: "%.3f", y!)
+                var p = "Could not find GPA trying " + cgpa
+                msgText.text = p
+            }
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+    
 }
+
