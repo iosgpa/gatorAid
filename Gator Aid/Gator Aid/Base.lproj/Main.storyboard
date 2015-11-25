@@ -1019,47 +1019,58 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-7R-bmT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-I8-I8M">
-                                <rect key="frame" x="102" y="214" width="478" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-I8-I8M">
+                                <rect key="frame" x="102" y="197" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sX6-bu-1Pq">
-                                <rect key="frame" x="102" y="260" width="478" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sX6-bu-1Pq">
+                                <rect key="frame" x="102" y="243" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny3-Pe-k3B">
-                                <rect key="frame" x="20" y="218" width="76" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny3-Pe-k3B">
+                                <rect key="frame" x="20" y="201" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reenter the password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-Gc-ZKT">
-                                <rect key="frame" x="102" y="298" width="478" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reenter the password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-Gc-ZKT">
+                                <rect key="frame" x="102" y="281" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-mq-YoP">
-                                <rect key="frame" x="102" y="361" width="478" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-mq-YoP">
+                                <rect key="frame" x="102" y="344" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkS-9o-dSJ">
-                                <rect key="frame" x="20" y="366" width="76" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick your major" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-so-4G1">
+                                <rect key="frame" x="102" y="445" width="478" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkS-9o-dSJ">
+                                <rect key="frame" x="20" y="348" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reenter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-tY-iDy">
-                                <rect key="frame" x="102" y="399" width="478" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSg-Zw-eSO">
+                                <rect key="frame" x="20" y="450" width="76" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reenter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-tY-iDy">
+                                <rect key="frame" x="102" y="382" width="478" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-x8-QeX">
-                                <rect key="frame" x="20" y="265" width="76" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-x8-QeX">
+                                <rect key="frame" x="20" y="247" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GatorAidLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-yx-NHj">
@@ -1072,19 +1083,19 @@
                                     <segue destination="oga-E4-uf2" kind="show" id="G4o-k4-gyQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-pT-7Uq">
-                                <rect key="frame" x="169" y="464" width="264" height="37"/>
-                                <state key="normal" title="Sign Up" backgroundImage="Generic_button.png"/>
-                                <connections>
-                                    <action selector="SignUp:" destination="MMs-nZ-SKT" eventType="touchUpInside" id="eJV-6u-65I"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfl-2f-XXB">
                                 <rect key="frame" x="20" y="176" width="560" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.86444523358585856" green="0.029569510378937024" blue="0.031103519790127203" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-pT-7Uq">
+                                <rect key="frame" x="168" y="541" width="264" height="37"/>
+                                <state key="normal" title="Sign Up" backgroundImage="Generic_button.png"/>
+                                <connections>
+                                    <action selector="SignUp:" destination="MMs-nZ-SKT" eventType="touchUpInside" id="eJV-6u-65I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1096,13 +1107,15 @@
                             <constraint firstItem="aE0-mq-YoP" firstAttribute="width" secondItem="YEf-Gc-ZKT" secondAttribute="width" id="5VL-9h-w8y"/>
                             <constraint firstItem="aE0-mq-YoP" firstAttribute="top" secondItem="YEf-Gc-ZKT" secondAttribute="bottom" constant="33" id="5e4-7K-DTx"/>
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="width" secondItem="ny3-Pe-k3B" secondAttribute="width" id="7C6-cY-Zi9"/>
+                            <constraint firstItem="8cm-pT-7Uq" firstAttribute="top" secondItem="lZI-so-4G1" secondAttribute="bottom" constant="66" id="8rN-aC-Xpp"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerY" secondItem="ZRR-x8-QeX" secondAttribute="centerY" id="8yh-bd-Kec"/>
                             <constraint firstItem="jqP-7R-bmT" firstAttribute="top" secondItem="xc2-sM-KGP" secondAttribute="topMargin" id="9Bs-q0-hgP"/>
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="9av-hf-uE0"/>
                             <constraint firstItem="fkR-I8-I8M" firstAttribute="trailing" secondItem="xc2-sM-KGP" secondAttribute="trailingMargin" id="9dq-fK-w0u"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="width" secondItem="aE0-mq-YoP" secondAttribute="width" id="9yX-JU-c3o"/>
+                            <constraint firstItem="lZI-so-4G1" firstAttribute="top" secondItem="ymg-tY-iDy" secondAttribute="bottom" constant="33" id="BbA-m1-Klq"/>
+                            <constraint firstItem="8cm-pT-7Uq" firstAttribute="centerX" secondItem="xc2-sM-KGP" secondAttribute="centerX" id="GB5-Jf-hR6"/>
                             <constraint firstItem="aE0-mq-YoP" firstAttribute="centerX" secondItem="YEf-Gc-ZKT" secondAttribute="centerX" id="GoW-Sy-NdW"/>
-                            <constraint firstItem="8cm-pT-7Uq" firstAttribute="top" secondItem="ymg-tY-iDy" secondAttribute="bottom" constant="52" id="Gww-ze-6OY"/>
                             <constraint firstItem="mfl-2f-XXB" firstAttribute="trailing" secondItem="xc2-sM-KGP" secondAttribute="trailingMargin" id="KVo-6Z-Nd4"/>
                             <constraint firstItem="TkS-9o-dSJ" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="MOd-UX-fT6"/>
                             <constraint firstItem="zmB-7D-u6c" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" constant="4" id="O9p-YG-Ush"/>
@@ -1110,19 +1123,25 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jqP-7R-bmT" secondAttribute="trailing" constant="-20" id="Whz-Ee-FIN"/>
                             <constraint firstItem="8cm-pT-7Uq" firstAttribute="centerX" secondItem="xc2-sM-KGP" secondAttribute="centerX" id="Ytz-L0-XAk"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerX" secondItem="fkR-I8-I8M" secondAttribute="centerX" id="Z5X-6F-4QQ"/>
+                            <constraint firstItem="WSg-Zw-eSO" firstAttribute="centerY" secondItem="lZI-so-4G1" secondAttribute="centerY" id="ZvQ-Nk-YdM"/>
                             <constraint firstItem="fkR-I8-I8M" firstAttribute="centerY" secondItem="ny3-Pe-k3B" secondAttribute="centerY" id="ceK-j4-kfF"/>
+                            <constraint firstItem="WSg-Zw-eSO" firstAttribute="width" secondItem="ny3-Pe-k3B" secondAttribute="width" id="d5K-Dx-7Tm"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="top" secondItem="aE0-mq-YoP" secondAttribute="bottom" constant="8" id="dZe-WZ-WRB"/>
                             <constraint firstItem="YEf-Gc-ZKT" firstAttribute="top" secondItem="sX6-bu-1Pq" secondAttribute="bottom" constant="8" id="eCK-oM-xUl"/>
                             <constraint firstItem="UhT-8z-qTs" firstAttribute="top" secondItem="jqP-7R-bmT" secondAttribute="bottom" id="fYt-No-L3D"/>
+                            <constraint firstItem="lZI-so-4G1" firstAttribute="width" secondItem="ymg-tY-iDy" secondAttribute="width" id="jQY-nJ-0aC"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="centerY" secondItem="ZRR-x8-QeX" secondAttribute="centerY" id="kmq-p7-cQO"/>
                             <constraint firstItem="ny3-Pe-k3B" firstAttribute="top" secondItem="mfl-2f-XXB" secondAttribute="bottom" constant="25" id="lrM-yG-bfc"/>
                             <constraint firstItem="ymg-tY-iDy" firstAttribute="centerX" secondItem="aE0-mq-YoP" secondAttribute="centerX" id="lyq-eL-Wl5"/>
                             <constraint firstItem="TkS-9o-dSJ" firstAttribute="centerY" secondItem="aE0-mq-YoP" secondAttribute="centerY" id="mkX-kx-tV2"/>
+                            <constraint firstItem="UhT-8z-qTs" firstAttribute="top" secondItem="8cm-pT-7Uq" secondAttribute="bottom" constant="20" id="neJ-6M-z7e"/>
                             <constraint firstItem="zmB-7D-u6c" firstAttribute="top" secondItem="8L0-uc-zpS" secondAttribute="bottom" constant="16" id="oS5-Lx-T4Z"/>
                             <constraint firstItem="ZRR-x8-QeX" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="olQ-rg-jUb"/>
                             <constraint firstItem="nOm-yx-NHj" firstAttribute="centerX" secondItem="xc2-sM-KGP" secondAttribute="centerX" id="p3C-uP-Jh1"/>
                             <constraint firstItem="ny3-Pe-k3B" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" id="tmC-BQ-s8F"/>
+                            <constraint firstItem="WSg-Zw-eSO" firstAttribute="centerX" secondItem="ny3-Pe-k3B" secondAttribute="centerX" id="tpt-qt-1qS"/>
                             <constraint firstItem="jqP-7R-bmT" firstAttribute="leading" secondItem="xc2-sM-KGP" secondAttribute="leadingMargin" constant="-20" id="vkm-LS-D2b"/>
+                            <constraint firstItem="lZI-so-4G1" firstAttribute="centerX" secondItem="ymg-tY-iDy" secondAttribute="centerX" id="vw5-kd-HNU"/>
                             <constraint firstItem="nOm-yx-NHj" firstAttribute="top" secondItem="8L0-uc-zpS" secondAttribute="bottom" constant="80" id="xOb-OI-HIM"/>
                             <constraint firstItem="sX6-bu-1Pq" firstAttribute="width" secondItem="fkR-I8-I8M" secondAttribute="width" id="xwz-W8-Lxy"/>
                             <constraint firstItem="YEf-Gc-ZKT" firstAttribute="width" secondItem="sX6-bu-1Pq" secondAttribute="width" id="yWH-lc-Co0"/>
@@ -1133,6 +1152,8 @@
                                 <exclude reference="2Mj-z2-sRK"/>
                                 <exclude reference="olQ-rg-jUb"/>
                                 <exclude reference="8yh-bd-Kec"/>
+                                <exclude reference="Ytz-L0-XAk"/>
+                                <exclude reference="neJ-6M-z7e"/>
                             </mask>
                         </variation>
                     </view>
@@ -1140,6 +1161,7 @@
                         <outlet property="confirmEmail" destination="ymg-tY-iDy" id="mJp-9I-XHt"/>
                         <outlet property="confirmPass" destination="YEf-Gc-ZKT" id="yOF-o2-zqb"/>
                         <outlet property="email" destination="aE0-mq-YoP" id="Kk7-ab-V0N"/>
+                        <outlet property="major" destination="lZI-so-4G1" id="3xe-Da-msC"/>
                         <outlet property="msg" destination="mfl-2f-XXB" id="acB-1J-6dn"/>
                         <outlet property="password" destination="sX6-bu-1Pq" id="yJU-t2-n6O"/>
                         <outlet property="username" destination="fkR-I8-I8M" id="2Ke-gy-bHM"/>
@@ -1372,10 +1394,10 @@
         <image name="line.png" width="319" height="9"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qsg-cQ-slh"/>
+        <segue reference="G4o-k4-gyQ"/>
         <segue reference="466-eF-iex"/>
-        <segue reference="mIj-Y0-PzL"/>
-        <segue reference="MOp-47-GOs"/>
-        <segue reference="oKU-tG-w0u"/>
         <segue reference="emT-Ip-WEb"/>
+        <segue reference="oKU-tG-w0u"/>
     </inferredMetricsTieBreakers>
 </document>

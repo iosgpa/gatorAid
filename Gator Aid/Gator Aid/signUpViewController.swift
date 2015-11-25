@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class signUpViewController: UIViewController {
+class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // UI variables
     @IBOutlet weak var username: UITextField!
@@ -17,12 +17,39 @@ class signUpViewController: UIViewController {
     @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var confirmEmail: UITextField!
+    @IBOutlet weak var major: UITextField!
     @IBOutlet weak var msg: UILabel!
+    var pickMajor = ["Computer Engineering", "Computer Science", "Electrical Engineering"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var mPickerView = UIPickerView()
+        
+        mPickerView.delegate = self
+        
+        major.inputView = mPickerView
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickMajor.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickMajor[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        major.text = pickMajor[row]
+        self.view.endEditing(true)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +65,7 @@ class signUpViewController: UIViewController {
     func isInfoValid() -> Bool {
         if (username.text == "" || password.text == "" ||
             confirmPass.text == "" || email.text == "" ||
-            confirmEmail.text == "" ) {
+            confirmEmail.text == "" || major.text == "") {
                 printMessage("One or more fields is missing")
                 return false
         }
@@ -60,6 +87,7 @@ class signUpViewController: UIViewController {
             user.username = username.text
             user.password = password.text
             user.email = email.text
+            self.createUserProfile()
             
             // Sign User in
             user.signUpInBackgroundWithBlock {
@@ -75,6 +103,11 @@ class signUpViewController: UIViewController {
 
         }
     }
+    
+    func createUserProfile() {
+        let advisor = PFObject(className: "Profile")
+    }
+    
     
     func goHome() {
         print("Going Home from Sign Up")
