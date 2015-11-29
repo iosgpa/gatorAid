@@ -9,7 +9,8 @@
 import UIKit
 import Parse
 
-var currUserMajor = String()
+var currUserCourseTrack = [PFObject]()
+var currUserMajor = [PFObject]()
 var currUserAdvisor = [PFObject]()
 var currUserProfile = [PFObject]()
 var currUserSchedule = [PFObject]()
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
-        if(currUserSchedule.count == 0) {
+        if(currUserSchedule.count == 0 && PFUser.currentUser() != nil) {
             self.getCurrentUserSchedule()
         }
     }
@@ -36,10 +37,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(animated: Bool) {
-        if(currUserAdvisor.count  == 0) {
+        if(currUserAdvisor.count  == 0 && PFUser.currentUser() != nil) {
             getCurrentUserAdvisor()
         }
-        if (currUserProfile.count == 0) {
+        if (currUserProfile.count == 0 && PFUser.currentUser() != nil) {
             getCurrentUserProfile()
         }
         self.printInfo()
@@ -47,7 +48,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func printInfo() {
         if(currUserProfile.count != 0 && currUserAdvisor.count != 0) {
-            self.currGpa.text = String(currUserProfile[0]["currGPA"])
+            if (currUserProfile[0]["currGPA"] != nil) {
+                self.currGpa.text = String(currUserProfile[0]["currGPA"])
+            }
+            else {
+                self.currGpa.text = "0.00"
+            }
             self.msg1.text = "Your advisor is " + String(currUserAdvisor[0]["name"])
             self.msg2.text = String(currUserAdvisor[0]["location"]) + ", " + String(currUserAdvisor[0]["room"])
         }

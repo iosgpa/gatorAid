@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class GPATrackViewController: UIViewController {
+class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableViewDataSource {
 
     // UI Variable declarations
     @IBOutlet weak var Menu: UIBarButtonItem!
@@ -24,6 +24,16 @@ class GPATrackViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("daCourse", forIndexPath: indexPath) as! DegreeAuditTableViewCell
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+
     
     @IBAction func Logout(sender: AnyObject) {
         PFUser.logOut()

@@ -19,6 +19,8 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var confirmEmail: UITextField!
     @IBOutlet weak var major: UITextField!
     @IBOutlet weak var msg: UILabel!
+    
+    
     var pickMajor = ["Computer Engineering", "Computer Science", "Electrical Engineering"]
     
     override func viewDidLoad() {
@@ -87,27 +89,81 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             user.username = username.text
             user.password = password.text
             user.email = email.text
-            self.createUserProfile()
             
             // Sign User in
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
                     let errorStr = error.userInfo["error"] as? NSString
-                    print(errorStr)
+                    self.printMessage(errorStr as! String)
                 }
                 else {
-                    self.goHome()
+                    self.createUserProfile()
                 }
             }
-
         }
     }
     
     func createUserProfile() {
-        let advisor = PFObject(className: "Profile")
+ 
+        var tmp:String
+        var user  = PFUser.currentUser() as! PFObject
+        
+        if(major.text == "Computer Engineering"){ tmp = "CPE" }
+        else if(major.text == "Computer Science") { tmp = "CS"}
+        else { tmp = "EE" }
+        
+        // Create profile for user
+        let profile = PFObject(className: "Profile")
+        profile.setObject(PFUser.currentUser()!, forKey: "user")
+        
+        // Find the corresponding advisor and major from parse collection
+        let query:PFQuery = PFQuery(className: "Majors")
+        query.whereKey("majorId", equalTo: tmp)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    profile.setObject(obj, forKey: "decMajor")
+                    profile.setObject(obj["advisor"], forKey: "advisor")
+                    currUserMajor.append(obj)
+                    currUserProfile.append(profile)
+                    do { try profile.save() }
+                    catch {
+                        self.printMessage("Could not complete profile")
+                    }
+                    
+                    // Update user Object
+                    user.setObject(obj["advisor"], forKey: "advisor")
+                    user.setObject(obj, forKey: "decMajor")
+                    user.setObject(profile, forKey: "profile")
+                    do { try user.save() }
+                    catch {
+                        self.printMessage("Could not complete profile")
+                    }
+                    
+                    
+                    // Get the advisor of the current user
+                    var query2 = PFQuery(className: "Advisors")
+                    query2.whereKey("majorId", equalTo: tmp)
+                    query2.limit = 1
+                    query2.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+                        if error == nil {
+                            for o in objects! {
+                                currUserAdvisor.append(o)
+                                // GO home after user profile has been set up
+                                self.goHome()
+                            }
+                        }
+                        else {
+                            self.printMessage("Error: Could not add advisor to account")
+                        }
+                    }
+                }
+            }
+        }
+        
     }
-    
     
     func goHome() {
         print("Going Home from Sign Up")
