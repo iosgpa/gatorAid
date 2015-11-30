@@ -14,6 +14,7 @@ class signInViewController: UIViewController {
     // UI variables declarations
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var errMsg: UILabel!
     
     
     override func viewDidLoad() {
@@ -40,50 +41,113 @@ class signInViewController: UIViewController {
                         (user: PFUser?, error: NSError?) -> Void in
                         if user != nil {
                             print("You logged in")
-                            self.getCurrentUserProfile()
-                            self.getCurrentUserAdvisor()
-                            self.goHome()
+                            self.getCurrentUserInfo()
                         }
                         else {
-                            print(error?.description)
+                            print("Invalid Login entry")
                         }
                     }
                 }
             }
+            else {
+                self.printInfo("Invalid Login entry")
+            }
         }
     }
     
+    func getCurrentUserInfo() {
+        let user  = PFUser.currentUser() as! PFObject
+        // Find User Profile
+        let queryProfile = PFQuery(className: "Profile")
+        queryProfile.whereKey("user", equalTo: PFUser.currentUser()!)
+        queryProfile.limit = 1
+        queryProfile.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    currUserProfile.append(obj)
+                    self.getCurrentUserAdvisor()
+                }
+            }
+            else {
+                self.printInfo("Cannot retrieve user profile")
+            }
+        }
+    }
+    
+    
+    
     // Get the advisor of the current logged in user
     func getCurrentUserAdvisor() {
-        let tmp = PFUser.currentUser() as! PFObject
+        let user  = PFUser.currentUser() as! PFObject
         let query:PFQuery = PFQuery(className: "Advisors")
-        query.whereKey("objectId", equalTo: tmp["advisor"].objectId!!)
-        query.limit = 1
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    currUserAdvisor.append(obj)
+                    if(obj == user["advisor"] as! PFObject) {
+                        currUserAdvisor.append(obj)
+                        self.getCurrentUserMajor()
+                    }
                 }
+            }
+            else {
+                self.printInfo("Cannot retrieve user's advisor")
             }
         }
     }
     
     // Get the profile of the current user
-    func getCurrentUserProfile() {
-        let query:PFQuery = PFQuery(className: "Profile")
-        query.whereKey("user", equalTo: PFUser.currentUser()!)
-        query.limit = 1
+    func getCurrentUserMajor() {
+        let user  = PFUser.currentUser() as! PFObject
+        let query:PFQuery = PFQuery(className: "Majors")
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    currUserProfile.append(obj)
+                    if(obj == user["decMajor"] as! PFObject) {
+                        currUserProfile.append(obj)
+                        print(obj)
+                        self.getCurrentUserCourseTrack()
+                        return
+                    }
                 }
             }
+            else {
+                self.printInfo("Cannot retrieve user's major")
+            }
+        }
+    }
+    
+    func getCurrentUserCourseTrack() {
+        let query:PFQuery = PFQuery(className: "CourseTrack")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    currUserCourseTrack.append(obj)
+                    print(obj)
+                }
+                self.goHome()
+            }
+            else {
+                self.printInfo("Cannot retrieve user's major")
+            }
+        }
+    }
+    
+    func printInfo(msg:String) {
+        if(msg != "") {
+            errMsg.text = msg
         }
     }
     
     // Proceed to Home page if the user is already logged in or user meet login credentials
     func goHome() {
+        print("TEST that all information is retrieved")
+        print("*******************************************************")
+        print(currUserProfile)
+        print(currUserAdvisor)
+        print(currUserMajor)
+        print(currUserCourseTrack)
+        print("*******************************************************\n")
         performSegueWithIdentifier("signIn2Home", sender: nil)
     }
 }

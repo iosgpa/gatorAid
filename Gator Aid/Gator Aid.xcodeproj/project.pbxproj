@@ -54,6 +54,7 @@
 		83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */; };
 		83FF9E3A1BF4651B00B4C5AD /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E391BF4651B00B4C5AD /* signInViewController.swift */; };
 		83FF9E3C1BF4655300B4C5AD /* myAdvisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */; };
+		EC81E0601C0B9FD40023B30B /* DegreeAuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81E05F1C0B9FD40023B30B /* DegreeAuditTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		83FF9E391BF4651B00B4C5AD /* signInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myAdvisorViewController.swift; sourceTree = "<group>"; };
+		EC81E05F1C0B9FD40023B30B /* DegreeAuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeAuditTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				3F1BDCDF1BED141C000219AD /* Supporting Files */,
 				3F91331E1BDE790A00C2E690 /* Info.plist */,
 				3F1BDCD91BED103A000219AD /* MainViewController.swift */,
+				EC81E05F1C0B9FD40023B30B /* DegreeAuditTableViewCell.swift */,
 			);
 			path = "Gator Aid";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */,
 				3F1BDCE51BED24B7000219AD /* GPAGuesserViewController.swift in Sources */,
 				3FDC176A1BF7A10600791DF3 /* StartUpViewController.swift in Sources */,
+				EC81E0601C0B9FD40023B30B /* DegreeAuditTableViewCell.swift in Sources */,
 				3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */,
 				83551C891C03763E000BA1E8 /* courseTrackViewController.swift in Sources */,
 				3F9133151BDE790A00C2E690 /* ViewController.swift in Sources */,

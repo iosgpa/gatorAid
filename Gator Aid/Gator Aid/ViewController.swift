@@ -9,7 +9,9 @@
 import UIKit
 import Parse
 
-var currUserMajor = String()
+var Courses = [PFObject]()
+var currUserCourseTrack = [PFObject]()
+var currUserMajor = [PFObject]()
 var currUserAdvisor = [PFObject]()
 var currUserProfile = [PFObject]()
 var currUserSchedule = [PFObject]()
@@ -25,9 +27,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // If no user is logged in, redirect app to start up page
+        if(PFUser.currentUser() == nil) {
+            let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
+            UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
+        }
+        
         initMenuButton()
-        if(currUserSchedule.count == 0) {
-            self.getCurrentUserSchedule()
+        if( (PFUser.currentUser() != nil) && (currUserProfile.count == 0) ) {
+            self.getCurrentUserProfile()
         }
     }
 
@@ -36,18 +44,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(animated: Bool) {
-        if(currUserAdvisor.count  == 0) {
-            getCurrentUserAdvisor()
-        }
-        if (currUserProfile.count == 0) {
-            getCurrentUserProfile()
-        }
         self.printInfo()
+    }
+    
+    // Purpose: This function retrieve information if they are not available
+    func getInfo() {
+        if(PFUser.currentUser() != nil) {
+            self.getCurrentUserProfile()
+        }
     }
     
     func printInfo() {
         if(currUserProfile.count != 0 && currUserAdvisor.count != 0) {
-            self.currGpa.text = String(currUserProfile[0]["currGPA"])
+            if (currUserProfile[0]["currGPA"] != nil) {
+                self.currGpa.text = String(currUserProfile[0]["currGPA"])
+            }
+            else {
+                self.currGpa.text = "0.00"
+            }
             self.msg1.text = "Your advisor is " + String(currUserAdvisor[0]["name"])
             self.msg2.text = String(currUserAdvisor[0]["location"]) + ", " + String(currUserAdvisor[0]["room"])
         }
@@ -57,6 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCourseId", forIndexPath: indexPath)
         cell.textLabel?.text = String(currUserSchedule[indexPath.row]["courseName"])
+        view?.backgroundColor = UIColor(white: 1, alpha: 0.5)
         return cell
     }
     
@@ -77,29 +92,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
         UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
     }
-
-    func getCurrentUserSchedule() {
+    
+    
+    func getCourseTrack() {
         let query:PFQuery = PFQuery(className: "CourseTrack")
         query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    self.tmp.append(obj["courses"] as! PFObject)
-                }
-                
-                let query2:PFQuery = PFQuery(className: "Courses")
-                query2.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
-                    if error == nil {
-                        for obj in objects! {
-                            for o in self.tmp {
-                                if obj == o {
-                                    currUserSchedule.append(obj)
-                                }
+                    currUserCourseTrack.append(obj)
+                    if( (obj["currSched"] != nil) && (obj["currSched"] as! Bool == true) ) {
+                        for o in Courses {
+                            if(o == obj["courses"] as! PFObject) {
+                                currUserSchedule.append(o)
                             }
                         }
-                        print(currUserSchedule)
-                        self.tabCourses.reloadData()
                     }
+                }
+                self.tabCourses.reloadData()
+            }
+        }
+    }
+    
+    
+    func getCourses() {
+        let query:PFQuery = PFQuery(className: "Courses")
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    Courses.append(obj)
+                }
+                if(currUserCourseTrack.count == 0) {
+                    self.getCourseTrack()
                 }
             }
         }
@@ -116,6 +140,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for obj in objects! {
                     currUserAdvisor.append(obj)
                 }
+                if(Courses.count == 0) {
+                    self.getCourses()
+                }
+                self.printInfo()
             }
         }
     }
@@ -130,6 +158,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for obj in objects! {
                     currUserProfile.append(obj)
                 }
+                if(currUserAdvisor.count == 0) {
+                    self.getCurrentUserAdvisor()
+                }
+                self.printInfo()
             }
         }
     }
