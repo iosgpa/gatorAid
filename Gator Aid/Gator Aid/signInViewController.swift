@@ -105,9 +105,27 @@ class signInViewController: UIViewController {
                     if(obj == user["decMajor"] as! PFObject) {
                         currUserProfile.append(obj)
                         print(obj)
-                        self.goHome()
+                        self.getCurrentUserCourseTrack()
+                        return
                     }
                 }
+            }
+            else {
+                self.printInfo("Cannot retrieve user's major")
+            }
+        }
+    }
+    
+    func getCurrentUserCourseTrack() {
+        let query:PFQuery = PFQuery(className: "CourseTrack")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    currUserCourseTrack.append(obj)
+                    print(obj)
+                }
+                self.goHome()
             }
             else {
                 self.printInfo("Cannot retrieve user's major")
@@ -123,6 +141,13 @@ class signInViewController: UIViewController {
     
     // Proceed to Home page if the user is already logged in or user meet login credentials
     func goHome() {
+        print("TEST that all information is retrieved")
+        print("*******************************************************")
+        print(currUserProfile)
+        print(currUserAdvisor)
+        print(currUserMajor)
+        print(currUserCourseTrack)
+        print("*******************************************************\n")
         performSegueWithIdentifier("signIn2Home", sender: nil)
     }
 }

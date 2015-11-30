@@ -1241,6 +1241,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3G-PX-DcS">
                                 <rect key="frame" x="20" y="174" width="560" height="406"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="daCourse" rowHeight="86" id="Uli-Ui-T7m" customClass="DegreeAuditTableViewCell" customModule="Gator_Aid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="86"/>
@@ -1281,6 +1282,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="courseCredit" destination="x7G-Ex-9WU" id="0uT-hs-12t"/>
                                             <outlet property="courseDescription" destination="6lg-0L-awK" id="42R-Oh-umB"/>
