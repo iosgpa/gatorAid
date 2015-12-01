@@ -98,25 +98,36 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     self.printMessage(errorStr as! String)
                 }
                 else {
-                    self.createUserProfile()
+                    self.getAllCourses()
                 }
             }
         }
     }
     
-    func createUserProfile() {
+    func createUserProfile(tmp:String, advisor:PFObject) {
         
-        var profileSet = false
-        var tmp:String
-        var user  = PFUser.currentUser() as! PFObject
-        
-        if(major.text == "Computer Engineering"){ tmp = "CPE" }
-        else if(major.text == "Computer Science") { tmp = "CS"}
-        else { tmp = "EE" }
+        let user  = PFUser.currentUser() as! PFObject
         
         // Create profile for user
         let profile = PFObject(className: "Profile")
         profile.setObject(PFUser.currentUser()!, forKey: "user")
+        profile.setObject(tmp, forKey: "majorId")
+        profile.setObject(advisor, forKey: "advisor")
+        currUserProfile.append(profile)
+        do { try profile.save() }
+        catch {
+            self.printMessage("Could not complete profile")
+        }
+        
+        // Update current User object
+        user.setObject(advisor, forKey: "advisor")
+        user.setObject(tmp, forKey: "majorId")
+        user.setObject(profile, forKey: "profile")
+        do { try user.save() }
+        catch {
+            self.printMessage("Could not complete profile")
+        }
+        
         
         // Find the corresponding advisor and major from parse collection
         let query:PFQuery = PFQuery(className: "Majors")
@@ -124,28 +135,6 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    // Update profile if not already done
-                    if(!profileSet) {
-                        profile.setObject(obj, forKey: "decMajor")
-                        profile.setObject(obj["advisor"], forKey: "advisor")
-                        currUserMajor.append(obj)
-                        currUserProfile.append(profile)
-                        do { try profile.save() }
-                        catch {
-                            self.printMessage("Could not complete profile")
-                        }
-                        
-                        // Update user Object
-                        user.setObject(obj["advisor"], forKey: "advisor")
-                        user.setObject(obj, forKey: "decMajor")
-                        user.setObject(profile, forKey: "profile")
-                        do { try user.save() }
-                        catch {
-                            self.printMessage("Could not complete profile")
-                        }
-                        profileSet = true
-                    }
-                    
                     // Create current user course track
                     let courseTrack = PFObject(className: "CourseTrack")
                     courseTrack.setObject(PFUser.currentUser()!, forKey: "user")
@@ -154,31 +143,60 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     catch {
                         self.printMessage("Could not complete profile")
                     }
+                    currUserMajor.append(obj)
                     currUserCourseTrack.append(courseTrack)
                 }
-                
-                // Get the advisor of the current user
-                var query2 = PFQuery(className: "Advisors")
-                query2.whereKey("majorId", equalTo: tmp)
-                query2.limit = 1
-                query2.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
-                    if error == nil {
-                        for o in objects! {
-                            currUserAdvisor.append(o)
-                            // GO home after user profile has been set up
-                            self.goHome()
-                        }
-                    }
-                    else {
-                        self.printMessage("Error: Could not add advisor to account")
-                    }
-                }
-            } // End if
+                print("Course track and major retrieved. User profile set")
+                self.goHome()
+            }
             else {
                 self.printMessage("Error: Could not retrieve majors catalog")
             }
         }
         
+    }
+    
+    func getAllCourses() {
+        
+        // Pass in the selected user major
+        var tmp:String
+        if(self.major.text == "Computer Engineering"){ tmp = "CPE" }
+        else if(self.major.text == "Computer Science") { tmp = "CS"}
+        else { tmp = "EE" }
+        
+        let query = PFQuery(className: "Courses")
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    Courses.append(obj)
+                }
+                print("All courses retrieved")
+                self.setUserAdvisor(tmp)
+            }
+            else {
+                self.printMessage("Error: Could load courses")
+            }
+        }
+    }
+    
+    
+    func setUserAdvisor(majorID:String) {
+        // Get the advisor of the current user
+        let query2 = PFQuery(className: "Advisors")
+        query2.whereKey("majorId", equalTo: majorID)
+        query2.limit = 1
+        query2.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for o in objects! {
+                    currUserAdvisor.append(o)
+                    print("Advisor info retrieved and set locally")
+                    self.createUserProfile(majorID, advisor: o)
+                }
+            }
+            else {
+                self.printMessage("Error: Could not add advisor to account")
+            }
+        }
     }
     
     func goHome() {
@@ -188,6 +206,7 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         print(currUserAdvisor)
         print(currUserMajor)
         print(currUserCourseTrack)
+        print(Courses)
         print("*******************************************************\n")
         print("Going Home from Sign Up")
         performSegueWithIdentifier("signUp2Home", sender: nil)

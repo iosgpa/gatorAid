@@ -20,7 +20,7 @@ class courseTrackViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        let cell = UITableViewCell()
         
         let (grd) = final [indexPath.row]
         

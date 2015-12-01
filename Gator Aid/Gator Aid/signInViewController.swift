@@ -41,7 +41,7 @@ class signInViewController: UIViewController {
                         (user: PFUser?, error: NSError?) -> Void in
                         if user != nil {
                             print("You logged in")
-                            self.getCurrentUserInfo()
+                            self.getCurrentUserProfile()
                         }
                         else {
                             print("Invalid Login entry")
@@ -55,8 +55,7 @@ class signInViewController: UIViewController {
         }
     }
     
-    func getCurrentUserInfo() {
-        let user  = PFUser.currentUser() as! PFObject
+    func getCurrentUserProfile() {
         // Find User Profile
         let queryProfile = PFQuery(className: "Profile")
         queryProfile.whereKey("user", equalTo: PFUser.currentUser()!)
@@ -65,8 +64,9 @@ class signInViewController: UIViewController {
             if error == nil {
                 for obj in objects! {
                     currUserProfile.append(obj)
-                    self.getCurrentUserAdvisor()
                 }
+                print("Profile retrieved")
+                self.getCurrentUserAdvisor()
             }
             else {
                 self.printInfo("Cannot retrieve user profile")
@@ -85,9 +85,11 @@ class signInViewController: UIViewController {
                 for obj in objects! {
                     if(obj == user["advisor"] as! PFObject) {
                         currUserAdvisor.append(obj)
+                        print("Advisor retrieved")
                         self.getCurrentUserMajor()
                     }
                 }
+                
             }
             else {
                 self.printInfo("Cannot retrieve user's advisor")
@@ -95,23 +97,37 @@ class signInViewController: UIViewController {
         }
     }
     
-    // Get the profile of the current user
+    // Get major of the current user
     func getCurrentUserMajor() {
         let user  = PFUser.currentUser() as! PFObject
         let query:PFQuery = PFQuery(className: "Majors")
+        query.whereKey("majorId", equalTo: user["majorId"])
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
-                    if(obj == user["decMajor"] as! PFObject) {
-                        currUserProfile.append(obj)
-                        print(obj)
-                        self.getCurrentUserCourseTrack()
-                        return
-                    }
+                    currUserMajor.append(obj)
                 }
+                print("Major retrieved")
+                self.getAllCourses()
             }
             else {
                 self.printInfo("Cannot retrieve user's major")
+            }
+        }
+    }
+    
+    func getAllCourses() {
+        let query:PFQuery = PFQuery(className: "Courses")
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    Courses.append(obj)
+                }
+                print("Courses retrieved")
+                self.getCurrentUserCourseTrack()
+            }
+            else {
+                self.printInfo("Cannot retrieve list of courses")
             }
         }
     }
@@ -123,8 +139,15 @@ class signInViewController: UIViewController {
             if error == nil {
                 for obj in objects! {
                     currUserCourseTrack.append(obj)
-                    print(obj)
+                    if( (obj["currSched"] != nil) && (obj["currSched"] as! Bool == true) ) {
+                        for o in Courses {
+                            if( (obj["courses"] as! PFObject == o) && !currUserSchedule.contains(o) ) {
+                                currUserSchedule.append(o)
+                            }
+                        }
+                    }
                 }
+                print("Course track and current schedule retrieved")
                 self.goHome()
             }
             else {
@@ -132,6 +155,7 @@ class signInViewController: UIViewController {
             }
         }
     }
+    
     
     func printInfo(msg:String) {
         if(msg != "") {
@@ -141,12 +165,14 @@ class signInViewController: UIViewController {
     
     // Proceed to Home page if the user is already logged in or user meet login credentials
     func goHome() {
-        print("TEST that all information is retrieved")
+        print("TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST ")
         print("*******************************************************")
         print(currUserProfile)
+        print(currUserSchedule)
         print(currUserAdvisor)
         print(currUserMajor)
         print(currUserCourseTrack)
+        print(Courses)
         print("*******************************************************\n")
         performSegueWithIdentifier("signIn2Home", sender: nil)
     }
