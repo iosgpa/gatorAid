@@ -14,10 +14,15 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
     // UI Variable declarations
     @IBOutlet weak var Menu: UIBarButtonItem!
     
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var currGpa: UILabel!
+    @IBOutlet weak var goalGpa: UILabel!
+    @IBOutlet weak var gradDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initMenuButton()
+        self.printUserInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +52,7 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
             if(c == currUserCourseTrack[indexPath.row]["courses"] as! PFObject) {
                 cell.courseId.text = String(c["courseId"])
                 cell.courseDescription.text = String(c["courseName"])
-                cell.courseCredit.text = String(c["credits"])
+                cell.courseCredit.text = "Credits: " + String(c["credits"])
                 
                 cell.contentView.backgroundColor = UIColor.clearColor();
                 cell.backgroundColor = UIColor.clearColor()
@@ -69,6 +74,22 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
         PFUser.logOut()
         let startViewController = self.storyboard!.instantiateViewControllerWithIdentifier("StartUpPage")
         UIApplication.sharedApplication().keyWindow?.rootViewController = startViewController
+    }
+    
+    func printUserInfo() {
+        if(currUserProfile.count != 0) {
+            let tmp = String(currUserProfile[0]["firstName"]) + ", " + String(currUserProfile[0]["lastName"])
+            self.name.text = "Name: " + tmp
+            self.currGpa.text = "GPA: " + String(currUserProfile[0]["currGPA"])
+            self.goalGpa.text = "Goal GPA: " + String(currUserProfile[0]["goalGPA"])
+            self.gradDate.text = "Graduation: " + String(currUserProfile[0]["expGraduation"])
+        }
+        else {
+            self.name.text = "Name: "
+            self.currGpa.text = "GPA: "
+            self.goalGpa.text = "Goal GPA: "
+            self.gradDate.text = "Graduation: TBA"
+        }
     }
     
     // Initialize Menu button

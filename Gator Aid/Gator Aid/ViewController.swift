@@ -47,12 +47,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.printInfo()
     }
     
-    // Purpose: This function retrieve information if they are not available
-    func getInfo() {
-        if(PFUser.currentUser() != nil) {
-            self.getCurrentUserProfile()
-        }
-    }
     
     func printInfo() {
         if(currUserProfile.count != 0 && currUserAdvisor.count != 0) {
@@ -103,7 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     currUserCourseTrack.append(obj)
                     if( (obj["currSched"] != nil) && (obj["currSched"] as! Bool == true) ) {
                         for o in Courses {
-                            if(o == obj["courses"] as! PFObject) {
+                            if( (o == obj["courses"] as! PFObject) && !currUserSchedule.contains(o) ) {
                                 currUserSchedule.append(o)
                             }
                         }

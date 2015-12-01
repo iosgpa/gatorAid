@@ -12,11 +12,22 @@ class StartUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.releaseMemory()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // This function cleans all the global variables
+    func releaseMemory() {
+        currUserProfile.removeAll()
+        currUserSchedule.removeAll()
+        currUserMajor.removeAll()
+        currUserCourseTrack.removeAll()
+        currUserAdvisor.removeAll()
+        Courses.removeAll()
     }
 
 }
