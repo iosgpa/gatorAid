@@ -65,7 +65,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCourseId", forIndexPath: indexPath)
         cell.textLabel?.text = String(currUserSchedule[indexPath.row]["courseName"])
-        view?.backgroundColor = UIColor(white: 1, alpha: 0.5)
         return cell
     }
     
