@@ -1195,9 +1195,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-IH-uf3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxI-Vd-bxN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
@@ -1239,7 +1236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3G-PX-DcS">
-                                <rect key="frame" x="20" y="174" width="560" height="406"/>
+                                <rect key="frame" x="20" y="174" width="560" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1297,17 +1294,37 @@
                                     <outlet property="delegate" destination="BTS-dO-nXn" id="Mp9-Nn-xoi"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vw-hM-Umz">
+                                <rect key="frame" x="168" y="486" width="264" height="37"/>
+                                <state key="normal" title="Add Previous Courses" backgroundImage="Generic_button.png"/>
+                                <connections>
+                                    <action selector="SignUp:" destination="MMs-nZ-SKT" eventType="touchUpInside" id="hev-s9-Cdm"/>
+                                    <action selector="addCourseToHist:" destination="roH-zK-fUr" eventType="touchUpInside" id="b3s-XA-Qkx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyP-cE-V9D">
+                                <rect key="frame" x="168" y="543" width="264" height="37"/>
+                                <state key="normal" title="Add Current Courses" backgroundImage="Generic_button.png"/>
+                                <connections>
+                                    <action selector="SignUp:" destination="MMs-nZ-SKT" eventType="touchUpInside" id="eIK-Ci-rN0"/>
+                                    <action selector="addCourseToHist:" destination="roH-zK-fUr" eventType="touchUpInside" id="nbP-uM-L37"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graduation: May 5, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-20-eLi">
                                 <rect key="frame" x="20" y="145" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-IH-uf3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QxI-Vd-bxN" firstAttribute="width" secondItem="PcW-Dk-Tu1" secondAttribute="width" id="1B1-0k-W7h"/>
                             <constraint firstItem="QxI-Vd-bxN" firstAttribute="top" secondItem="PcW-Dk-Tu1" secondAttribute="topMargin" id="3uh-nV-fc1"/>
+                            <constraint firstItem="2Vw-hM-Umz" firstAttribute="top" secondItem="e3G-PX-DcS" secondAttribute="bottom" constant="20" id="6Pm-8z-rln"/>
                             <constraint firstItem="KSN-CE-esI" firstAttribute="trailing" secondItem="PcW-Dk-Tu1" secondAttribute="trailingMargin" id="7Vp-sK-bir"/>
                             <constraint firstItem="Tfd-yy-FLt" firstAttribute="centerX" secondItem="KSN-CE-esI" secondAttribute="centerX" id="AQC-Qv-vm3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sKx-IH-uf3" secondAttribute="trailing" constant="-20" id="AQU-qw-x4q"/>
@@ -1315,11 +1332,14 @@
                             <constraint firstItem="Tfd-yy-FLt" firstAttribute="width" secondItem="KSN-CE-esI" secondAttribute="width" id="AtX-TM-EFn"/>
                             <constraint firstItem="ice-9O-opF" firstAttribute="width" secondItem="Tfd-yy-FLt" secondAttribute="width" id="Eqs-sq-Ffq"/>
                             <constraint firstItem="Tfd-yy-FLt" firstAttribute="top" secondItem="KSN-CE-esI" secondAttribute="bottom" id="FRD-sm-kua"/>
+                            <constraint firstItem="SgA-iS-C2N" firstAttribute="top" secondItem="wyP-cE-V9D" secondAttribute="bottom" constant="20" id="Gl0-Zh-wnM"/>
                             <constraint firstItem="KSN-CE-esI" firstAttribute="leading" secondItem="PcW-Dk-Tu1" secondAttribute="leadingMargin" id="H5z-dQ-4eA"/>
                             <constraint firstItem="e3G-PX-DcS" firstAttribute="width" secondItem="Fsm-20-eLi" secondAttribute="width" id="HWn-Dp-xaT"/>
                             <constraint firstItem="SgA-iS-C2N" firstAttribute="top" secondItem="e3G-PX-DcS" secondAttribute="bottom" constant="20" id="I2c-t0-jee"/>
                             <constraint firstItem="SgA-iS-C2N" firstAttribute="top" secondItem="sKx-IH-uf3" secondAttribute="bottom" id="MGM-g9-QaO"/>
+                            <constraint firstItem="2Vw-hM-Umz" firstAttribute="centerX" secondItem="PcW-Dk-Tu1" secondAttribute="centerX" id="Qkk-zT-ery"/>
                             <constraint firstItem="sKx-IH-uf3" firstAttribute="leading" secondItem="PcW-Dk-Tu1" secondAttribute="leadingMargin" constant="-20" id="SdE-mx-fGu"/>
+                            <constraint firstItem="wyP-cE-V9D" firstAttribute="centerX" secondItem="2Vw-hM-Umz" secondAttribute="centerX" id="UXQ-7Z-EGg"/>
                             <constraint firstItem="e3G-PX-DcS" firstAttribute="centerX" secondItem="Fsm-20-eLi" secondAttribute="centerX" id="VFr-3r-4FV"/>
                             <constraint firstItem="ice-9O-opF" firstAttribute="centerX" secondItem="Tfd-yy-FLt" secondAttribute="centerX" id="bk9-oD-P8i"/>
                             <constraint firstItem="sKx-IH-uf3" firstAttribute="top" secondItem="PcW-Dk-Tu1" secondAttribute="topMargin" id="eDH-kE-La1"/>
@@ -1328,9 +1348,16 @@
                             <constraint firstItem="Fsm-20-eLi" firstAttribute="centerX" secondItem="ice-9O-opF" secondAttribute="centerX" id="jjV-oq-Oa9"/>
                             <constraint firstItem="KSN-CE-esI" firstAttribute="top" secondItem="QxI-Vd-bxN" secondAttribute="bottom" constant="12" id="mmh-i0-ClP"/>
                             <constraint firstItem="QxI-Vd-bxN" firstAttribute="centerX" secondItem="PcW-Dk-Tu1" secondAttribute="centerX" id="qvf-77-ySj"/>
+                            <constraint firstItem="wyP-cE-V9D" firstAttribute="width" secondItem="2Vw-hM-Umz" secondAttribute="width" id="rHF-MM-ovt"/>
                             <constraint firstItem="KSN-CE-esI" firstAttribute="centerX" secondItem="QxI-Vd-bxN" secondAttribute="centerX" id="s54-FZ-5l4"/>
+                            <constraint firstItem="wyP-cE-V9D" firstAttribute="top" secondItem="2Vw-hM-Umz" secondAttribute="bottom" constant="20" id="sw0-rz-kKL"/>
                             <constraint firstItem="ice-9O-opF" firstAttribute="top" secondItem="Tfd-yy-FLt" secondAttribute="bottom" id="tBe-ZK-sg0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I2c-t0-jee"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="Menu" destination="YxT-Hj-lSe" id="dK9-XA-Oby"/>
