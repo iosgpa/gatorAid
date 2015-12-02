@@ -323,6 +323,139 @@
             </objects>
             <point key="canvasLocation" x="-986" y="1555"/>
         </scene>
+        <!--Suggested Track View Controller-->
+        <scene sceneID="QGo-yF-IWy">
+            <objects>
+                <viewController id="Qtl-dn-SQM" customClass="suggestedTrackViewController" customModule="Gator_Aid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wKp-TK-MKC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SGk-nX-AQe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T2c-Rt-TGl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="century_tower_blurred.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-o4-jas">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOc-k2-qE8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="6kx-dN-08T"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="reH-x6-cjc">
+                                        <barButtonItem key="leftBarButtonItem" image="Menu-25.png" id="xfD-A1-bHT"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="kRK-b4-Imj">
+                                            <connections>
+                                                <action selector="Logout:" destination="Qtl-dn-SQM" id="cef-kI-cij"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major Name Suggested track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09V-Ll-Z6b">
+                                <rect key="frame" x="20" y="81" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undergraduate 2015 - 2016 Catalog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXa-a5-f9J">
+                                <rect key="frame" x="20" y="110" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Credits: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5P-cZ-gso">
+                                <rect key="frame" x="20" y="130" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WRv-xk-Gvq">
+                                <rect key="frame" x="20" y="159" width="560" height="421"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="suggestedID" rowHeight="109" id="Pq6-pc-6Ch" customClass="SuggestedTableViewCell" customModule="Gator_Aid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="109"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pq6-pc-6Ch" id="XU5-xX-uqn">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="An introduction to Computer Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC9-bw-Epi">
+                                                    <rect key="frame" x="19" y="36" width="478" height="21"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXO-db-p9u">
+                                                    <rect key="frame" x="19" y="18" width="478" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status: Enrolled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Ry-oJG">
+                                                    <rect key="frame" x="19" y="65" width="478" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credits: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AR-uE-z95">
+                                                    <rect key="frame" x="19" y="51" width="478" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseDsc" destination="KC9-bw-Epi" id="v9a-Ip-fBi"/>
+                                            <outlet property="courseId" destination="BXO-db-p9u" id="cPb-q7-8QR"/>
+                                            <outlet property="credits" destination="1AR-uE-z95" id="gL4-wx-sAw"/>
+                                            <outlet property="semester" destination="sEC-Ry-oJG" id="VVS-vH-bkc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qtl-dn-SQM" id="aZV-cq-M5D"/>
+                                    <outlet property="delegate" destination="Qtl-dn-SQM" id="v6A-wK-GEA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B5P-cZ-gso" firstAttribute="top" secondItem="YXa-a5-f9J" secondAttribute="bottom" constant="-1" id="2mE-Rr-KkO"/>
+                            <constraint firstItem="B5P-cZ-gso" firstAttribute="width" secondItem="YXa-a5-f9J" secondAttribute="width" id="4r4-oy-zcu"/>
+                            <constraint firstItem="WRv-xk-Gvq" firstAttribute="width" secondItem="B5P-cZ-gso" secondAttribute="width" id="HjM-K7-BcT"/>
+                            <constraint firstItem="Q03-o4-jas" firstAttribute="top" secondItem="T2c-Rt-TGl" secondAttribute="topMargin" id="IS8-Sx-ZL2"/>
+                            <constraint firstItem="09V-Ll-Z6b" firstAttribute="trailing" secondItem="T2c-Rt-TGl" secondAttribute="trailingMargin" id="Py6-MW-PSe"/>
+                            <constraint firstItem="SGk-nX-AQe" firstAttribute="top" secondItem="Q03-o4-jas" secondAttribute="bottom" id="UH8-IL-JLb"/>
+                            <constraint firstItem="B5P-cZ-gso" firstAttribute="centerX" secondItem="YXa-a5-f9J" secondAttribute="centerX" id="UPq-48-VwN"/>
+                            <constraint firstItem="YXa-a5-f9J" firstAttribute="centerX" secondItem="09V-Ll-Z6b" secondAttribute="centerX" id="Vn0-th-Xun"/>
+                            <constraint firstItem="YXa-a5-f9J" firstAttribute="top" secondItem="09V-Ll-Z6b" secondAttribute="bottom" constant="8" id="XdA-2Y-Gat"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q03-o4-jas" secondAttribute="trailing" constant="-20" id="Z4g-BZ-UhF"/>
+                            <constraint firstItem="Q03-o4-jas" firstAttribute="leading" secondItem="T2c-Rt-TGl" secondAttribute="leadingMargin" constant="-20" id="b7F-Mt-xTt"/>
+                            <constraint firstItem="WOc-k2-qE8" firstAttribute="top" secondItem="T2c-Rt-TGl" secondAttribute="topMargin" id="dpk-kI-ENJ"/>
+                            <constraint firstItem="WOc-k2-qE8" firstAttribute="centerX" secondItem="T2c-Rt-TGl" secondAttribute="centerX" id="gl2-Su-oyo"/>
+                            <constraint firstItem="WOc-k2-qE8" firstAttribute="width" secondItem="T2c-Rt-TGl" secondAttribute="width" id="kOc-m0-Mc6"/>
+                            <constraint firstItem="WRv-xk-Gvq" firstAttribute="centerX" secondItem="B5P-cZ-gso" secondAttribute="centerX" id="or5-Me-e4M"/>
+                            <constraint firstItem="09V-Ll-Z6b" firstAttribute="top" secondItem="WOc-k2-qE8" secondAttribute="bottom" constant="17" id="qWB-mh-ASV"/>
+                            <constraint firstItem="YXa-a5-f9J" firstAttribute="width" secondItem="09V-Ll-Z6b" secondAttribute="width" id="rsb-4Z-8Te"/>
+                            <constraint firstItem="WRv-xk-Gvq" firstAttribute="top" secondItem="B5P-cZ-gso" secondAttribute="bottom" constant="8" id="v7c-Mi-Nma"/>
+                            <constraint firstItem="09V-Ll-Z6b" firstAttribute="leading" secondItem="T2c-Rt-TGl" secondAttribute="leadingMargin" id="xvt-AO-kyf"/>
+                            <constraint firstItem="SGk-nX-AQe" firstAttribute="top" secondItem="WRv-xk-Gvq" secondAttribute="bottom" constant="20" id="zdU-r7-Wjw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Menu" destination="xfD-A1-bHT" id="oku-OG-NIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RT-pn-h6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326" y="1555"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="B2h-Bk-5Pl">
             <objects>
@@ -1006,6 +1139,26 @@
                                 <connections>
                                     <outlet property="Label" destination="2Jc-Kv-9V7" id="MrC-1B-D5a"/>
                                     <segue destination="IMK-6U-FmO" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="RK4-6x-yxo"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menu7" id="STH-OD-pyv" customClass="MenuOptionCustomCell" customModule="Gator_Aid" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="292" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STH-OD-pyv" id="syM-Wz-1Mi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggested Course Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvq-Hd-nQb">
+                                            <rect key="frame" x="16" y="16" width="576" height="27"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Label" destination="Mvq-Hd-nQb" id="1nN-SU-Aaq"/>
+                                    <segue destination="Qtl-dn-SQM" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="cpH-Vz-qAa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
