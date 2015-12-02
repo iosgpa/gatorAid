@@ -103,10 +103,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                 }
                 self.tabCourses.reloadData()
+                self.getCurrentUserMajor()
             }
         }
     }
     
+    func getCurrentUserMajor() {
+        let user  = PFUser.currentUser() as! PFObject
+        let query:PFQuery = PFQuery(className: "Majors")
+        query.whereKey("majorId", equalTo: user["majorId"])
+        query.orderByAscending("semester")
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for obj in objects! {
+                    currUserMajor.append(obj)
+                }
+                print("Major retrieved")
+            }
+        }
+    }
     
     func getCourses() {
         let query:PFQuery = PFQuery(className: "Courses")

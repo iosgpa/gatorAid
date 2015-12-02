@@ -102,6 +102,7 @@ class signInViewController: UIViewController {
         let user  = PFUser.currentUser() as! PFObject
         let query:PFQuery = PFQuery(className: "Majors")
         query.whereKey("majorId", equalTo: user["majorId"])
+        query.orderByAscending("semester")
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {
