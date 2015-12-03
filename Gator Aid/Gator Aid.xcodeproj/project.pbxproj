@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34B5E72C1C0FB45600087DA1 /* GPAestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B5E72B1C0FB45600087DA1 /* GPAestViewController.swift */; };
 		3F1BDCDA1BED103A000219AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCD91BED103A000219AD /* MainViewController.swift */; };
 		3F1BDCDE1BED13C9000219AD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCDD1BED13C9000219AD /* SWRevealViewController.m */; };
 		3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BDCE01BED1826000219AD /* BackTableViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34B5E72B1C0FB45600087DA1 /* GPAestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPAestViewController.swift; sourceTree = "<group>"; };
 		3F1BDCD91BED103A000219AD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3F1BDCDB1BED13C9000219AD /* GatorAid-Bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GatorAid-Bridging-header.h"; path = "SWRevealViewController/GatorAid-Bridging-header.h"; sourceTree = "<group>"; };
 		3F1BDCDC1BED13C9000219AD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				83551C881C03763E000BA1E8 /* courseTrackViewController.swift */,
 				83551C861C037620000BA1E8 /* GPATrackViewController.swift */,
 				3FDC17691BF7A10600791DF3 /* StartUpViewController.swift */,
+				34B5E72B1C0FB45600087DA1 /* GPAestViewController.swift */,
 				3F1BDCE41BED24B7000219AD /* GPAGuesserViewController.swift */,
 				83FF9E371BF464AF00B4C5AD /* signUpViewController.swift */,
 				83FF9E3B1BF4655300B4C5AD /* myAdvisorViewController.swift */,
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1BDCE31BED1DA3000219AD /* MenuOptionCustomCell.swift in Sources */,
+				34B5E72C1C0FB45600087DA1 /* GPAestViewController.swift in Sources */,
 				3F1BDCE11BED1826000219AD /* BackTableViewController.swift in Sources */,
 				EC662DD61C0F46C100C780AB /* CourseAvailabilityViewController.swift in Sources */,
 				83FF9E381BF464AF00B4C5AD /* signUpViewController.swift in Sources */,
