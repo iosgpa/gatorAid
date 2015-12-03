@@ -62,7 +62,7 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
         else if( (currUserCourseTrack[indexPath.row]["currSched"] == nil) && (currUserCourseTrack[indexPath.row]["grade"] == nil) )  {
             cell.courseStatus.text = "Status: "
             cell.courseGrade.text = ""
-            cell.contentView.backgroundColor = UIColor.clearColor()
+            cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.2)
         }
         else {
             cell.courseStatus.text = "Status: Taken"

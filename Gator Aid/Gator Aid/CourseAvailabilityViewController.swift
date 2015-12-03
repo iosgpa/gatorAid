@@ -34,7 +34,7 @@ class CourseAvailabilityViewController: UIViewController, UITableViewDelegate, U
     // Define each row of the table
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("allCoursesId", forIndexPath: indexPath) as! CourseAvbleTableViewCell
-        cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.2)
         
         // Find when course is offered
         var offer = ""

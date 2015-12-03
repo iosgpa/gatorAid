@@ -34,8 +34,8 @@ class GPAestViewController: UIViewController {
     }
     
     @IBAction func Calculate(sender: AnyObject) {
-        var totalcredit = 90.00      // Total hours earned
-        var commcredit = 2.00       // User current gpa
+        var totalcredit = currUserProfile[currUserProfile.count - 1]["hours"] as! Double
+        var commcredit = currUserProfile[currUserProfile.count - 1]["currGPA"] as! Double
         var target = 4.00           // Target gpa
         
         var target1 = 4.00

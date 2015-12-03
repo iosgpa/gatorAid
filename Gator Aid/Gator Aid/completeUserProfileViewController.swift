@@ -93,19 +93,25 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
         else {
             succMsg.text = course.text! + " was successfully added to your previous courses with the grade: " + grade.text!
             currUserCourseTrack[selectedCourseIndex]["grade"] = selectedGradeNum
+            
+            
             //add code to add course and grade to database
-
+            let query = PFQuery(className: "CourseTrack")
+            query.whereKey("objectId", equalTo: currUserCourseTrack[selectedCourseIndex]["objectId"])
+            query.limit = 1
+            query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+                if(error == nil) {
+                    for obj in objects! {
+                        obj["grade"] = self.selectedGradeNum
+                        obj.saveInBackground()
+                    }
+                }
+                else {
+                    print("Course was not added to the database")
+                }
+            }
+            
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
