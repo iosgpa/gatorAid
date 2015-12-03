@@ -132,6 +132,7 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Find the corresponding advisor and major from parse collection
         let query:PFQuery = PFQuery(className: "Majors")
         query.whereKey("majorId", equalTo: tmp)
+        query.orderByAscending("semester")
         query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 for obj in objects! {

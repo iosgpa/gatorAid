@@ -352,7 +352,7 @@ class GPAGuesserViewController: UIViewController, UIPickerViewDataSource, UIPick
             sum = cr1 + cr2 + cr3 + cr4 + cr5 + cr6
             gpa = (tot1 + tot2 + tot3 + tot4 + tot5 + tot6) / sum
             
-            gpaMsg.text = String(format: "%.3f", gpa)
+            gpaMsg.text = String(format: "%.2f", gpa)
             
         }
     }

@@ -17,8 +17,8 @@ class BackTableViewController: UITableViewController {
     override func viewDidLoad() {
         // Set Menu options
         // Array must be same length
-        menuList = ["Home", "Gpa", "Gpa tracker", "Degree Audit", "My Advisor", "Course Availability"]
-        menuListID = ["menu1", "menu2", "menu4", "menu3", "menu5", "menu6"]
+        menuList = ["Home", "Gpa", "Gpa tracker", "Degree Audit", "My Advisor", "Course Availability", "Suggested Course Track", "GPA Estimator"]
+        menuListID = ["menu1", "menu2", "menu4", "menu3", "menu5", "menu6", "menu7", "menu8"]
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
