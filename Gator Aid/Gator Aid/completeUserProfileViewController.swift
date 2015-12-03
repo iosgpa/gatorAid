@@ -97,7 +97,8 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
             
             //add code to add course and grade to database
             let query = PFQuery(className: "CourseTrack")
-            query.whereKey("objectId", equalTo: currUserCourseTrack[selectedCourseIndex]["objectId"])
+            query.whereKey("courses", equalTo: currUserCourseTrack[selectedCourseIndex]["courses"])
+            query.whereKey("user", equalTo: PFUser.currentUser()!)
             query.limit = 1
             query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
                 if(error == nil) {
