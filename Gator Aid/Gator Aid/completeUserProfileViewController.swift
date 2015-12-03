@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import Parse
 
 class completeUserProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var Menu: UIBarButtonItem!
     @IBOutlet weak var succMsg: UILabel!
     @IBOutlet weak var course: UITextField!
     @IBOutlet weak var grade: UITextField!
-    var pickCourse = [] //needs a method to populate from Parse
+    var pickCourse = currUserCourseTrack
     var pickGrade = ["A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E"]
-    
+    var pickGradeNum = [4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67, 0]
+    var selectedCourseIndex: Int = 0
+    var selectedGradeNum: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initMenuButton()
+        
         var cPickerView = UIPickerView()
         var gPickerView = UIPickerView()
         
@@ -31,6 +36,13 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
         
         cPickerView.tag = 0
         gPickerView.tag = 1
+    }
+    
+    // Initialize Menu button
+    func initMenuButton() {
+        // Menu.target = self.revealViewController()
+        Menu.action = Selector("revealToggle:")
+        // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -49,7 +61,7 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            return pickCourse[row] as! String
+            return pickCourse[row]["courses"]["courseName"] as? String
         }
         else if pickerView.tag == 1 {
             return pickGrade[row]
@@ -59,11 +71,12 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
-            course.text = pickCourse[row] as! String
+            course.text = pickCourse[row]["courses"]["courseName"] as? String
+            selectedCourseIndex = row
         }
         else if pickerView.tag == 1 {
             grade.text = pickGrade[row]
-            self.view.endEditing(true)
+            selectedGradeNum = pickGradeNum[row]
         }
         self.view.endEditing(true)
     }
@@ -78,8 +91,10 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
             succMsg.text = "Please ensure both a course and grade are picked!"
         }
         else {
-            succMsg.text = course.text! + "was successfully added to your previous courses with the grade: " + grade.text!
+            succMsg.text = course.text! + " was successfully added to your previous courses with the grade: " + grade.text!
+            currUserCourseTrack[selectedCourseIndex]["grade"] = selectedGradeNum
             //add code to add course and grade to database
+
         }
     }
 

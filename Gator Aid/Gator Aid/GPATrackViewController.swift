@@ -66,7 +66,7 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
         }
         else {
             cell.courseStatus.text = "Status: Taken"
-            cell.courseGrade.text = String(currUserCourseTrack[indexPath.row]["grade"])
+            cell.courseGrade.text = toLetterGrade((currUserCourseTrack[indexPath.row]["grade"]) as! Double)
             cell.contentView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 0.1)
         }
         
