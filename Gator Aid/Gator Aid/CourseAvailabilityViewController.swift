@@ -42,16 +42,16 @@ class CourseAvailabilityViewController: UIViewController, UITableViewDelegate, U
             offer = "Offered: Fall "
         }
         if(Courses[indexPath.row]["offerSpring"] as! Bool == true) {
-            offer = offer + "Spring "
+            offer = offer + "| Spring "
         }
         if(Courses[indexPath.row]["offerSummer"] as! Bool == true) {
-            offer = offer + "Summer "
+            offer = offer + "| Summer "
         }
         
         //Update cell with information
         cell.courseId.text = String(Courses[indexPath.row]["courseId"])
         cell.courseDesc.text = String(Courses[indexPath.row]["courseName"])
-        cell.credits.text = String(Courses[indexPath.row]["credits"])
+        cell.credits.text = "Credits: " + String(Courses[indexPath.row]["credits"])
         cell.offered.text = offer
         
         return cell
