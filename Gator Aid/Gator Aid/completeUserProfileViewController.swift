@@ -93,8 +93,8 @@ class completeUserProfileViewController: UIViewController, UIPickerViewDataSourc
         else {
             succMsg.text = course.text! + " was successfully added to your previous courses with the grade: " + grade.text!
             currUserCourseTrack[selectedCourseIndex]["grade"] = selectedGradeNum
+            currUserCourseTrack[selectedCourseIndex]["currSched"] = false
             //add code to add course and grade to database
-
         }
     }
 
