@@ -175,7 +175,7 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.setUserAdvisor(tmp)
             }
             else {
-                self.printMessage("Error: Could load courses")
+                self.printMessage("Error: Could not load courses")
             }
         }
     }
