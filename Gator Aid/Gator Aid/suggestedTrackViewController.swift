@@ -13,10 +13,16 @@ class suggestedTrackViewController: UIViewController, UITableViewDelegate, UITab
 
     // UI variables declarations
     @IBOutlet var Menu:UIBarButtonItem!
+    @IBOutlet weak var majorName: UILabel!
+    @IBOutlet weak var catalog: UILabel!
+    @IBOutlet weak var majorCredits: UILabel!
+    
+    var blockColor = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initMenuButton()
+        self.printInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +37,15 @@ class suggestedTrackViewController: UIViewController, UITableViewDelegate, UITab
         // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
+    func printInfo() {
+        if(currUserMajor.count != 0) {
+            let tmp = String(currUserMajor[0]["majorName"]) + " Suggested Coursetrack"
+            majorName.text = tmp
+            catalog.text = String(currUserMajor[0]["catalogInfo"])
+            majorCredits.text = "Total Credits: " + String(currUserMajor[0]["credits"])
+        }
+    }
+    
     // Define each row of the table
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("suggestedID", forIndexPath: indexPath) as! SuggestedTableViewCell
@@ -39,9 +54,11 @@ class suggestedTrackViewController: UIViewController, UITableViewDelegate, UITab
         if let i = Courses.indexOf(currUserMajor[indexPath.row]["course"] as! PFObject) {
             cell.courseId.text = String(Courses[i]["courseId"])
             cell.courseDsc.text = String(Courses[i]["courseName"])
-            cell.credits.text = String(Courses[i]["credits"])
-            cell.semester.text = String(currUserMajor[indexPath.row]["semester"])
+            cell.credits.text = "Credits: " + String(Courses[i]["credits"])
+            cell.semester.text = "Semester: " + String(currUserMajor[indexPath.row]["semester"])
         }
+        
+        cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.2)
         return cell
     }
     

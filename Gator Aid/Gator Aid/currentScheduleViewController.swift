@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class currentScheduleViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -55,27 +56,79 @@ class currentScheduleViewController: UIViewController, UIPickerViewDataSource, U
         self.view.endEditing(true)
     }
     
+    func computeUserGpa() {
+        var creditsEarned = 0.00
+        var creditGrade = 0.00
+        
+        // First compute the hourse earned
+        for obj in currUserCourseTrack {
+            // If user not enrolled in class
+            if( obj["currSched"] as! Bool != true && obj["grade"] != nil) {
+                if let i = Courses.indexOf(obj["courses"] as! PFObject) {
+                    let tmp = Courses[i]["credits"] as! Double
+                    creditsEarned = creditsEarned + tmp
+                    let tmp2 = obj["grade"] as! Double
+                    creditGrade = creditGrade + (tmp*tmp2)
+                }
+            }
+        }
+        
+        // Compute GPA
+        var gpa = creditGrade / creditsEarned
+        if(creditsEarned == 0) { gpa = 0.00 }
+        
+        // Update locally
+        currUserProfile[0]["hours"] = creditsEarned
+        currUserProfile[0]["currGPA"] = gpa
+        
+        // Update on Database
+        let query = PFQuery(className: "Profile")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            if(error == nil) {
+                for obj in objects! {
+                    obj["currGpa"] = gpa
+                    obj["hours"] = creditsEarned
+                    obj.saveInBackground()
+                }
+            }
+            else {
+                print("User current GPA and hours was not updated")
+            }
+        }
+    }
+    
     @IBAction func addCourseToCurrent(sender: AnyObject) {
         if (course.text == "") {
             succMsg.text = "Please ensure a course is picked!"
         }
         else {
             succMsg.text = course.text! + " was successfully added to your current course list!"
+            
+            // Update information locally
             currUserCourseTrack[selectedCourseIndex]["currSched"] = true
+            if let i = Courses.indexOf(currUserCourseTrack[selectedCourseIndex]["courses"] as! PFObject) {
+                currUserSchedule.append(Courses[i])
+            }
+            self.computeUserGpa()
+            
             //add code to add course and grade to database
+            let query = PFQuery(className: "CourseTrack")
+            query.whereKey("courses", equalTo: currUserCourseTrack[selectedCourseIndex]["courses"])
+            query.whereKey("user", equalTo: PFUser.currentUser()!)
+            query.limit = 1
+            query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+                if(error == nil) {
+                    for obj in objects! {
+                        obj["currSched"] = true
+                        obj.saveInBackground()
+                    }
+                }
+                else {
+                    print("Course was not added to the database")
+                }
+            }
         }
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

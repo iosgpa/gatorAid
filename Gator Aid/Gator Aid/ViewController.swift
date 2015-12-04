@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if( (PFUser.currentUser() != nil) && (currUserProfile.count == 0) ) {
             self.getCurrentUserProfile()
         }
+        //self.tabCourses.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func printInfo() {
         if(currUserProfile.count != 0 && currUserAdvisor.count != 0) {
             if (currUserProfile[0]["currGPA"] != nil) {
-                self.currGpa.text = String(currUserProfile[0]["currGPA"])
+                self.currGpa.text = String(format: "%.3f", currUserProfile[0]["currGPA"] as! Double)
             }
             else {
                 self.currGpa.text = "0.00"
