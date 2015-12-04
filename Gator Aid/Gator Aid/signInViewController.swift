@@ -177,4 +177,8 @@ class signInViewController: UIViewController {
         print("*******************************************************\n")
         performSegueWithIdentifier("signIn2Home", sender: nil)
     }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 }

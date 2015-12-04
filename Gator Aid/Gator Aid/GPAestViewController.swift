@@ -36,9 +36,9 @@ class GPAestViewController: UIViewController {
     @IBAction func Calculate(sender: AnyObject) {
         var totalcredit = currUserProfile[currUserProfile.count - 1]["hours"] as! Double
         var commcredit = currUserProfile[currUserProfile.count - 1]["currGPA"] as! Double
-        var target = 4.00           // Target gpa
+        var target = currUserProfile[0]["goalGPA"] as! Double
         
-        var target1 = 4.00
+        var target1 = currUserProfile[0]["goalGPA"] as! Double
         
         if(credits.text == "")
         {
@@ -63,7 +63,7 @@ class GPAestViewController: UIViewController {
             }
             else
             {
-                gpaout.text = String(format: "%.2f", check)
+                gpaout.text = "You need a GPA of " + String(format: "%.2f", check) + " to reach your goal GPA of " + String(currUserProfile[0]["goalGPA"])
             }
             
         }

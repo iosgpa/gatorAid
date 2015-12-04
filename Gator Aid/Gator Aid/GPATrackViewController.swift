@@ -59,13 +59,16 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
             cell.courseGrade.text = ""
             cell.contentView.backgroundColor = UIColor(red: 0, green: 43, blue: 255, alpha: 0.1)
         }
-        else if( (currUserCourseTrack[indexPath.row]["currSched"] == nil) && (currUserCourseTrack[indexPath.row]["grade"] == nil) )  {
-            cell.courseStatus.text = "Status: "
+        else if( (currUserCourseTrack[indexPath.row]["currSched"] != nil) && (currUserCourseTrack[indexPath.row]["currSched"] as! Bool == false) && (currUserCourseTrack[indexPath.row]["grade"] == nil) )  {
+            cell.courseStatus.text = "Status: Not Yet Taken"
             cell.courseGrade.text = ""
-            cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.2)
+            cell.contentView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
         }
         else {
             cell.courseStatus.text = "Status: Taken"
+            print("Index row: " + String(indexPath.row))
+            print("Object")
+            print(currUserCourseTrack[indexPath.row])
             cell.courseGrade.text = toLetterGrade((currUserCourseTrack[indexPath.row]["grade"]) as! Double)
             cell.contentView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 0.1)
         }
@@ -95,11 +98,10 @@ class GPATrackViewController: UIViewController, UIPickerViewDelegate, UITableVie
     
     func printUserInfo() {
         if(currUserProfile.count != 0) {
-            let tmp = String(currUserProfile[0]["firstName"]) + ", " + String(currUserProfile[0]["lastName"])
-            self.name.text = "Name: " + tmp
-            self.currGpa.text = "GPA: " + String(currUserProfile[0]["currGPA"])
-            self.goalGpa.text = "Goal GPA: " + String(currUserProfile[0]["goalGPA"])
-            self.gradDate.text = "Graduation: " + String(currUserProfile[0]["expGraduation"])
+            self.name.text = "Name: " + String(currUserProfile[0]["firstName"])
+            self.currGpa.text = "GPA: " + String(format: "%.3f", currUserProfile[0]["currGPA"] as! Double)
+            self.goalGpa.text = "Goal GPA: " + String(format: "%.3f", currUserProfile[0]["goalGPA"] as! Double)
+            self.gradDate.text = ""
         }
         else {
             self.name.text = "Name: "

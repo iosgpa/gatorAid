@@ -19,9 +19,11 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var confirmEmail: UITextField!
     @IBOutlet weak var major: UITextField!
     @IBOutlet weak var msg: UILabel!
+    @IBOutlet weak var targetGpa: UITextField!
+    @IBOutlet weak var name: UITextField!
     
     
-    var pickMajor = ["Computer Engineering", "Computer Science", "Electrical Engineering"]
+    var pickMajor = ["Computer Engineering", "Computer Science"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +52,9 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.view.endEditing(true)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +70,8 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func isInfoValid() -> Bool {
         if (username.text == "" || password.text == "" ||
             confirmPass.text == "" || email.text == "" ||
-            confirmEmail.text == "" || major.text == "") {
+            confirmEmail.text == "" || major.text == "" ||
+            name.text == "" || targetGpa.text == "") {
                 printMessage("One or more fields is missing")
                 return false
         }
@@ -113,6 +117,10 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         profile.setObject(PFUser.currentUser()!, forKey: "user")
         profile.setObject(tmp, forKey: "majorId")
         profile.setObject(advisor, forKey: "advisor")
+        profile.setObject(0, forKey: "currGPA")
+        profile.setObject(0, forKey: "hours")
+        profile.setObject(Double(targetGpa.text!)!, forKey: "goalGPA")
+        profile.setObject(name.text!, forKey: "firstName")
         currUserProfile.append(profile)
         do { try profile.save() }
         catch {
@@ -140,6 +148,7 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     let courseTrack = PFObject(className: "CourseTrack")
                     courseTrack.setObject(PFUser.currentUser()!, forKey: "user")
                     courseTrack.setObject(obj["course"], forKey: "courses")
+                    courseTrack.setObject(false, forKey: "currSched")
                     do { try courseTrack.save() }
                     catch {
                         self.printMessage("Could not complete profile")
@@ -175,7 +184,7 @@ class signUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 self.setUserAdvisor(tmp)
             }
             else {
-                self.printMessage("Error: Could load courses")
+                self.printMessage("Error: Could not load courses")
             }
         }
     }
